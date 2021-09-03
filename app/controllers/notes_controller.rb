@@ -5,10 +5,21 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     @note = Note.new
+
+    render inertia: 'Note',
+      props: {
+        note: { text: @note.body },
+        notes: @notes.map { |note| note.as_json(only: [:id, :date])}
+      }
   end
 
   # GET /notes/1/edit
   def edit
+    render inertia: 'Note',
+      props: {
+        note: { text: @note.body },
+        notes: @notes.map { |note| note.as_json(only: [:id, :date])}
+      }
   end
 
   # POST /notes or /notes.json
