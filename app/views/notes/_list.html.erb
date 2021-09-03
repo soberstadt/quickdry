@@ -1,0 +1,7 @@
+<div style="float: left; height 100%;">
+  <ul>
+    <% notes.each do |note| %>
+      <li><%= link_to(note.date, edit_note_path(note)) %></li>
+    <% end %>
+  </ul>
+</div>
