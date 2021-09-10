@@ -8,16 +8,21 @@ export default function Layout({ children, notes }) {
     </li>
   )
   return (
-    <main>
+    <main className="flex flex-column">
       <header>
+        <span>QuickDry</span> -
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
       </header>
-      <aside>
-        <ul>{listItems}</ul>
-      </aside>
-      <article>{children}</article>
+      <div className="flex flex-grow1">
+        <aside className="flex-shrink0">
+          <ul>{listItems}</ul>
+        </aside>
+        <article className="flex flex-column flex-grow1">
+          {children}
+        </article>
+      </div>
     </main>
   )
 }

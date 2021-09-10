@@ -5,9 +5,9 @@ import { Head } from '@inertiajs/inertia-react'
 export default function Note({ note, notes }) {
   return (
     <Layout notes={notes}>
-      <Head title="Note" />
-      <h1>Note</h1>
-      <textarea>{note.text}</textarea>
+      <Head title={`QuickDry - ${note.date}`} />
+      <h1 className="flex-shrink0">{note.date}</h1>
+      <textarea className="flex-grow1" defaultValue={note.body}></textarea>
     </Layout>
   )
 }

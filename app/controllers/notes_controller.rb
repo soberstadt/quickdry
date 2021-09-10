@@ -8,7 +8,7 @@ class NotesController < ApplicationController
 
     render inertia: 'Note',
       props: {
-        note: { text: @note.body },
+        note: @note.as_json(only: [:date, :body]),
         notes: @notes.map { |note| note.as_json(only: [:id, :date])}
       }
   end
@@ -17,7 +17,7 @@ class NotesController < ApplicationController
   def edit
     render inertia: 'Note',
       props: {
-        note: { text: @note.body },
+        note: @note.as_json(only: [:date, :body]),
         notes: @notes.map { |note| note.as_json(only: [:id, :date])}
       }
   end
