@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   before_action :set_note, only: %i[ edit update destroy ]
   before_action :set_notes, only: %i[ new edit ]
+  skip_before_action :verify_authenticity_token, only: %i[ create update ]
 
   # GET /notes/new
   def new
@@ -8,8 +9,8 @@ class NotesController < ApplicationController
 
     render inertia: 'Note',
       props: {
-        note: @note.as_json(only: [:date, :body]),
-        notes: @notes.map { |note| note.as_json(only: [:id, :date])}
+        note: @note.as_json,
+        notes: notes_json
       }
   end
 
@@ -17,18 +18,18 @@ class NotesController < ApplicationController
   def edit
     render inertia: 'Note',
       props: {
-        note: @note.as_json(only: [:date, :body]),
-        notes: @notes.map { |note| note.as_json(only: [:id, :date])}
+        note: @note.as_json,
+        notes: notes_json
       }
   end
 
   # POST /notes or /notes.json
   def create
-    @note = Note.new(note_params)
+    @note = Note.new(note_params.merge(date: Date.today))
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to edit_note_path(@note), notice: "Note was successfully created." }
+        format.html { render inertia: 'Note', props: {note: @note.as_json, notes: notes_json } }
         format.json { render :edit, status: :created, location: @note }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +42,7 @@ class NotesController < ApplicationController
   def update
     respond_to do |format|
       if @note.update(note_params)
-        format.html { redirect_to @note, notice: "Note was successfully updated." }
+        format.html { render inertia: 'Note', props: {note: @note.as_json, notes: notes_json } }
         format.json { render :edit, status: :ok, location: @note }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -66,7 +67,11 @@ class NotesController < ApplicationController
     end
 
     def set_notes
-      @notes = Note.all
+      @notes ||= Note.all
+    end
+
+    def notes_json
+      set_notes.map { |note| note.as_json(only: [:id, :date])}
     end
 
     # Only allow a list of trusted parameters through.
