@@ -26,3 +26,8 @@ html, body, #app, main, .height100p { height: 100%; }
 header { height:  3em; }
 aside { flex-basis: 200px; }
 article {}
+
+textarea {
+  font-family: 'Lotion', 'Anonymous Pro for Powerline', 'Courier New', Courier, monospace;
+  font-size: 16px;
+}

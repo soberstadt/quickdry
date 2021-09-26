@@ -42,7 +42,7 @@ class NotesController < ApplicationController
   def update
     respond_to do |format|
       if @note.update(note_params)
-        format.html { render inertia: 'Note', props: {note: @note.as_json, notes: notes_json } }
+        format.html { redirect_to edit_note_path(@note), turbolinks: false }
         format.json { render :edit, status: :ok, location: @note }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -67,11 +67,13 @@ class NotesController < ApplicationController
     end
 
     def set_notes
-      @notes ||= Note.all
+      @notes ||= Note.all_plus_today
     end
 
     def notes_json
-      set_notes.map { |note| note.as_json(only: [:id, :date])}
+      set_notes.map do |note|
+        note.as_json.slice('id', 'date_string')
+      end
     end
 
     # Only allow a list of trusted parameters through.

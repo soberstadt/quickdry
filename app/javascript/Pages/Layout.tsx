@@ -2,22 +2,26 @@ import React, { useEffect } from 'react'
 import { Link } from '@inertiajs/inertia-react'
 
 export default function Layout({ children, notes }) {
-  const listItems = notes.map((note) =>
+  const notesLink = (note) => {
+    if(note.id == null) {
+      return "/notes/new"
+    } else {
+      return `/notes/${note.id}/edit`
+    }
+  }
+  const notesList = notes.map((note) =>
     <li>
-      <Link href={`/notes/${note.id}/edit`}>{note.date}</Link>
+      <Link href={notesLink(note)}>{note.date_string}</Link>
     </li>
   )
   return (
     <main className="flex flex-column">
       <header>
-        <span>QuickDry</span> -
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-        <Link href="/contact">Contact</Link>
+        <span>QuickDry</span>
       </header>
       <div className="flex flex-grow1">
         <aside className="flex-shrink0">
-          <ul>{listItems}</ul>
+          <ul>{notesList}</ul>
         </aside>
         <article className="flex flex-column flex-grow1">
           {children}
