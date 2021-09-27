@@ -3,7 +3,7 @@ import { Link } from '@inertiajs/inertia-react'
 
 export default function Layout({ children, notes }) {
   const notesLink = (note) => {
-    if(note.id == null) {
+    if (note.id == null) {
       return "/notes/new"
     } else {
       return `/notes/${note.id}/edit`
@@ -16,7 +16,7 @@ export default function Layout({ children, notes }) {
   )
   return (
     <main className="flex flex-column">
-      <header>
+      <header class="flex items-center justify-between flex-wrap bg-teal p-6">
         <span>QuickDry</span>
       </header>
       <div className="flex flex-grow1">
