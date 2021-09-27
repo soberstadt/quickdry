@@ -1,38 +1,41 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from './Layout'
 import { Head } from '@inertiajs/inertia-react'
 import { Inertia } from '@inertiajs/inertia'
 
-type NoteComponentProps = {
-  // using `interface` is also ok
+declare interface NotePageProps {
   note: { id, date, date_string, body };
   notes: Array<Object>
-};
+}
 
-export default class Note extends React.Component<NoteComponentProps> {
-  constructor(props) {
-    super(props);
+export default function Note({ note, notes }: NotePageProps) {
+  const MINUTE_MS = 60000;
 
-    // This binding is necessary to make `this` work in the callback
-    this.handleChange = this.handleChange.bind(this);
+  const reloadNotes = () => {
+    Inertia.reload({ only: ['notes'] })
   }
 
-  handleChange(event) {
+  useEffect(() => {
+    const interval = setInterval(reloadNotes, MINUTE_MS * 5)
+
+    // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
+    return () => clearInterval(interval)
+  }, [])
+
+  const handleChange = (event) => {
     let data = { body: event.target.value, preserveState: true }
-    if (this.props.note.id !== null) {
-      Inertia.put(`/notes/${this.props.note.id}`, data)
+    if (note.id !== null) {
+      Inertia.put(`/notes/${note.id}`, data)
     } else {
       Inertia.post(`/notes`, data)
     }
   }
 
-  render() {
-    return (
-      <Layout notes={this.props.notes}>
-        <Head title={`QuickDry - ${this.props.note.date_string}`} />
-        <h1 className="flex-shrink0">{this.props.note.date_string}</h1>
-        <textarea className="flex-grow1" defaultValue={this.props.note.body} onChange={this.handleChange}></textarea>
-      </Layout>
-    )
-  }
+  return (
+    <Layout notes={notes}>
+      <Head title={`QuickDry - ${note.date_string}`} />
+      <h1 className="flex-shrink0">{note.date_string}</h1>
+      <textarea className="flex-grow1" defaultValue={note.body} onChange={handleChange}></textarea>
+    </Layout>
+  )
 }
