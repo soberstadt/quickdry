@@ -5,61 +5,58 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     @note = Note.new
-
-    render inertia: 'Note',
-      props: {
-        note: @note.as_json,
-        notes: notes_json
-      }
+    render_note_page
   end
 
   # GET /notes/1/edit
   def edit
-    render inertia: 'Note',
-      props: {
-        note: @note.as_json,
-        notes: notes_json
-      }
+    render_note_page
   end
 
   # POST /notes or /notes.json
   def create
-    @note = Note.new(note_params.merge(date: Date.today))
-
-    respond_to do |format|
-      if @note.save
-        format.html { render inertia: 'Note', props: {note: @note.as_json, notes: notes_json } }
-        format.json { render :edit, status: :created, location: @note }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
-      end
+    if build_note.save
+      redirect_to edit_note_path(@note), turbolinks: false, notice: "Note successfully created."
+    else
+      render_note_page status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /notes/1 or /notes/1.json
   def update
-    respond_to do |format|
-      if @note.update(note_params)
-        format.html { redirect_to edit_note_path(@note), turbolinks: false }
-        format.json { render :edit, status: :ok, location: @note }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
-      end
+    if @note.update(note_params)
+      redirect_to edit_note_path(@note), turbolinks: false
+    else
+      render_note_page status: :unprocessable_entity
     end
   end
 
   # DELETE /notes/1 or /notes/1.json
   def destroy
     @note.destroy
-    respond_to do |format|
-      format.html { redirect_to new_note_path, notice: "Note was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to new_note_path, notice: "Note was successfully destroyed."
   end
 
   private
+    def build_note
+      @note = Note.new(note_params.merge(date: Date.today))
+    end
+
+    def render_note_page(options = {})
+      options = options.merge(default_note_page_render_options)
+      render options
+    end
+
+    def default_note_page_render_options
+      {
+        inertia: 'Note',
+        props: {
+          note: @note.as_json,
+          notes: notes_json
+        }
+      }
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_note
       @note = Note.find(params[:id])
@@ -75,8 +72,7 @@ class NotesController < ApplicationController
       end
     end
 
-    # Only allow a list of trusted parameters through.
     def note_params
-      params.require(:note).permit(:body, :date)
+      params.require(:note).permit(:body)
     end
 end
