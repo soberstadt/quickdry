@@ -1,7 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: %i[ edit update destroy ]
   before_action :set_notes, only: %i[ new edit ]
-  skip_before_action :verify_authenticity_token, only: %i[ create update ]
 
   # GET /notes/new
   def new
