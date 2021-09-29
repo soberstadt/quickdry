@@ -2,20 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-.padding1 { padding: 1rem; }
-
-.flex { display: flex; }
-.flex-column { flex-direction: column; }
-.flex-grow1 { flex-grow: 1; }
-.flex-shrink0 { flex-shrink: 0; }
-
-html, body, #app, main, .height100p { height: 100%; }
-
-header { height:  3em; }
-aside { flex-basis: 200px; }
-article {}
-
-textarea {
-  font-family: 'Lotion', 'Anonymous Pro for Powerline', 'Courier New', Courier, monospace;
-  font-size: 16px;
-}
+#app { height: 100%; }

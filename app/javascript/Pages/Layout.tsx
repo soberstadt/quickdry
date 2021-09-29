@@ -11,19 +11,19 @@ export default function Layout({ children, notes }) {
   }
   const notesList = notes.map((note) =>
     <li>
-      <Link href={notesLink(note)}>{note.date_string}</Link>
+      <Link href={notesLink(note)} className="bg-gray-800 p-2">{note.date_string}</Link>
     </li>
   )
   return (
-    <main className="flex flex-column">
-      <header>
+    <main className="h-full flex flex-col bg-gray-700 text-gray-50">
+      <header className="h-12 p-3">
         <span>QuickDry</span>
       </header>
-      <div className="flex flex-grow1">
-        <aside className="flex-shrink0">
+      <div className="flex flex-grow">
+        <aside className="flex-shrink-0 w-48">
           <ul>{notesList}</ul>
         </aside>
-        <article className="flex flex-column flex-grow1">
+        <article className="flex flex-col flex-grow">
           {children}
         </article>
       </div>

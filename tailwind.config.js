@@ -5,5 +5,10 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
     './app/javascript/**/*.tsx'
-  ]
+  ],
+  theme: {
+    fontFamily: {
+      mono: ['Lotion', 'Anonymous Pro for Powerline', 'Courier New', 'monospace']
+    }
+  }
 }

@@ -34,8 +34,12 @@ export default function Note({ note, notes }: NotePageProps) {
   return (
     <Layout notes={notes}>
       <Head title={`QuickDry - ${note.date_string}`} />
-      <h1 className="flex-shrink0">{note.date_string}</h1>
-      <textarea className="flex-grow1" defaultValue={note.body} onChange={handleChange}></textarea>
+      <h1 className="flex-shrink-0">{note.date_string}</h1>
+      <textarea
+        className="flex-grow text-lg font-mono text-black"
+        defaultValue={note.body}
+        onChange={handleChange}>
+      </textarea>
     </Layout>
   )
 }
