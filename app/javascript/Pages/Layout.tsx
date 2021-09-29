@@ -16,7 +16,7 @@ export default function Layout({ children, notes }) {
   )
   return (
     <main className="flex flex-column">
-      <header class="flex items-center justify-between flex-wrap bg-teal p-6">
+      <header>
         <span>QuickDry</span>
       </header>
       <div className="flex flex-grow1">
