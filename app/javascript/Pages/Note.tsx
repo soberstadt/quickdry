@@ -32,7 +32,7 @@ export default function Note({ note, notes }: NotePageProps) {
   };
 
   return (
-    <Layout notes={notes}>
+    <Layout notes={notes} selectedNote={note}>
       <Head title={`QuickDry - ${note.date_string}`} />
       <h1 className="flex-shrink-0 text-2xl p-2">{note.date_string}</h1>
       <textarea

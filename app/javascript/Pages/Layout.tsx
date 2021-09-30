@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "@inertiajs/inertia-react";
 
-export default function Layout({ children, notes }) {
+export default function Layout({ children, notes, selectedNote }) {
   const notesLink = (note) => {
     if (note.id == null) {
       return "/notes/new";
@@ -14,6 +14,7 @@ export default function Layout({ children, notes }) {
       href={notesLink(note)}
       className="bg-gray-800 bg-opacity-30 block p-2"
     >
+      {selectedNote.id == note.id ? "> " : ""}
       {note.date_string}
     </Link>
   ));
