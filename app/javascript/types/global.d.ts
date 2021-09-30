@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 /**
  * InertiaJS is missing type definitions for the Head component.
@@ -9,8 +9,8 @@ import React from "react"
  */
 declare module "@inertiajs/inertia-react" {
   interface HeadProps {
-    title?: string
+    title?: string;
   }
 
-  let Head: React.FC<HeadProps>
+  let Head: React.FC<HeadProps>;
 }
