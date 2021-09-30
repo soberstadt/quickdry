@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: %i[ edit update destroy ]
-  before_action :set_notes, only: %i[ new edit ]
+  before_action :set_note, only: %i[edit update destroy]
+  before_action :set_notes, only: %i[new edit]
 
   # GET /notes/new
   def new
@@ -16,7 +16,9 @@ class NotesController < ApplicationController
   # POST /notes or /notes.json
   def create
     if build_note.save
-      redirect_to edit_note_path(@note), turbolinks: false, notice: "Note successfully created."
+      redirect_to edit_note_path(@note),
+                  turbolinks: false,
+                  notice: 'Note successfully created.'
     else
       render_note_page status: :unprocessable_entity
     end
@@ -34,45 +36,38 @@ class NotesController < ApplicationController
   # DELETE /notes/1 or /notes/1.json
   def destroy
     @note.destroy
-    redirect_to new_note_path, notice: "Note was successfully destroyed."
+    redirect_to new_note_path, notice: 'Note was successfully destroyed.'
   end
 
   private
-    def build_note
-      @note = Note.new(note_params.merge(date: Date.today))
-    end
 
-    def render_note_page(options = {})
-      options = options.merge(default_note_page_render_options)
-      render options
-    end
+  def build_note
+    @note = Note.new(note_params.merge(date: Date.today))
+  end
 
-    def default_note_page_render_options
-      {
-        inertia: 'Note',
-        props: {
-          note: @note.as_json,
-          notes: notes_json
-        }
-      }
-    end
+  def render_note_page(options = {})
+    options = options.merge(default_note_page_render_options)
+    render options
+  end
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_note
-      @note = Note.find(params[:id])
-    end
+  def default_note_page_render_options
+    { inertia: 'Note', props: { note: @note.as_json, notes: notes_json } }
+  end
 
-    def set_notes
-      @notes ||= Note.all_plus_today
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_note
+    @note = Note.find(params[:id])
+  end
 
-    def notes_json
-      set_notes.map do |note|
-        note.as_json.slice('id', 'date_string')
-      end
-    end
+  def set_notes
+    @notes ||= Note.all_plus_today
+  end
 
-    def note_params
-      params.require(:note).permit(:body)
-    end
+  def notes_json
+    set_notes.map { |note| note.as_json.slice('id', 'date_string') }
+  end
+
+  def note_params
+    params.require(:note).permit(:body)
+  end
 end

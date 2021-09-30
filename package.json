@@ -17,8 +17,9 @@
     "turbolinks": "^5.2.0"
   },
   "devDependencies": {
+    "@prettier/plugin-ruby": "^2.0.0-rc1",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
-    "prettier": "2.4.1"
+    "prettier": "^2.4.1"
   }
 }

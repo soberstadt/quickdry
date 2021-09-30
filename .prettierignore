@@ -3,4 +3,5 @@
 /app/assets/esbuilds
 /app/assets/builds
 /config/storage.yml
+/db/schema.rb
 /public

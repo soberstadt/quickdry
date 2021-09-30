@@ -60,6 +60,13 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@prettier/plugin-ruby@^2.0.0-rc1":
+  version "2.0.0-rc1"
+  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-2.0.0-rc1.tgz#30372ff603f9d01b4e51392182a4a620c4dbfdd5"
+  integrity sha512-+AoeeqG9/2T3UgdRUU7FSt/uVx7bP5kD/3Vzq59A85SJp/r1SInFrzvgoXHr3MAlQRbjb0CLSDIumRHgD42jcQ==
+  dependencies:
+    prettier ">=2.3.0"
+
 "@types/parse-json@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
@@ -848,7 +855,7 @@ postcss@^8.1.6, postcss@^8.2.1, postcss@^8.3.8:
     nanoid "^3.1.25"
     source-map-js "^0.6.2"
 
-prettier@2.4.1:
+prettier@>=2.3.0, prettier@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.4.1.tgz#671e11c89c14a4cfc876ce564106c4a6726c9f5c"
   integrity sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==
