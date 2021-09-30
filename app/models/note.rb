@@ -1,10 +1,14 @@
 class Note < ApplicationRecord
   class << self
     def all_plus_today
-      add_today all.order(date: :desc)
+      add_today all_non_blank.order(date: :desc)
     end
 
     private
+
+    def all_non_blank
+      where.not(body: '').or(where(date: Date.today))
+    end
 
     def add_today(notes)
       return notes if notes.any? { |note| note_is_today?(note) }
@@ -25,6 +29,9 @@ class Note < ApplicationRecord
   end
 
   def date_string
-    date.to_s.presence || 'Today'
+    return 'Today' if date.nil? || date == Date.today
+    return 'Yesterday' if date == (Date.today - 1.day)
+    return date.strftime('%B %e') if date.year == Date.today.year
+    date.to_s
   end
 end
