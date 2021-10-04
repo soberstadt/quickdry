@@ -1,11 +1,13 @@
 class Note < ApplicationRecord
+  scope :recent_first, -> { order(date: :desc) }
+  scope :exportable, -> { where.not(body: '') }
+  scope :today_or_not_blank, -> { exportable.or(where(date: Date.today)) }
+
+  after_commit { ExportToFileJob.perform_later }
+
   class << self
     def all_plus_today
-      add_today all_non_blank.order(date: :desc)
-    end
-
-    def all_non_blank
-      exportable.or(where(date: Date.today))
+      add_today today_or_not_blank.recent_first
     end
 
     private
@@ -20,13 +22,9 @@ class Note < ApplicationRecord
     end
 
     def today_note
-      Note.new
+      Note.new(date: Date.today)
     end
   end
-
-  scope :exportable, -> { where.not(body: '') }
-
-  after_commit { ExportToFileJob.perform_later }
 
   def attributes
     super.merge(date_string: date_string)

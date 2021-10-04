@@ -17,7 +17,7 @@ class ExportToFileJob < ApplicationJob
   end
 
   def notes_scope
-    Note.exportable.order(created_at: :desc)
+    Note.exportable.recent_first
   end
 
   def filepath
