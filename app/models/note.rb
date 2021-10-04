@@ -4,11 +4,11 @@ class Note < ApplicationRecord
       add_today all_non_blank.order(date: :desc)
     end
 
-    private
-
     def all_non_blank
-      where.not(body: '').or(where(date: Date.today))
+      exportable.or(where(date: Date.today))
     end
+
+    private
 
     def add_today(notes)
       return notes if notes.any? { |note| note_is_today?(note) }
@@ -24,6 +24,10 @@ class Note < ApplicationRecord
     end
   end
 
+  scope :exportable, -> { where.not(body: '') }
+
+  after_commit { ExportToFileJob.perform_later }
+
   def attributes
     super.merge(date_string: date_string)
   end
@@ -33,5 +37,15 @@ class Note < ApplicationRecord
     return 'Yesterday' if date == (Date.today - 1.day)
     return date.strftime('%B %e') if date.year == Date.today.year
     date.to_s
+  end
+
+  def as_markdown
+    "#{markdown_title}\n\n#{body.strip}"
+  end
+
+  private
+
+  def markdown_title
+    "# QUICKDRY NOTE FOR #{date}"
   end
 end
