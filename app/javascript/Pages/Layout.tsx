@@ -1,7 +1,12 @@
-import React, { useEffect } from "react";
-import { Link } from "@inertiajs/inertia-react";
+import React, { useEffect, useState } from "react";
+import { Link, usePage } from "@inertiajs/inertia-react";
+import Alert from "../Components/Alert";
 
 export default function Layout({ children, notes, selectedNote }) {
+  const { flash } = usePage().props;
+  const [flashState, setFlashState] = useState();
+  useEffect(() => setFlashState(flash.message), [flash]);
+
   const notesLink = (note) => {
     if (note.id == null) {
       return "/notes/new";
@@ -9,6 +14,7 @@ export default function Layout({ children, notes, selectedNote }) {
       return `/notes/${note.id}/edit`;
     }
   };
+
   const notesList = notes.map((note) => (
     <Link
       href={notesLink(note)}
@@ -22,6 +28,7 @@ export default function Layout({ children, notes, selectedNote }) {
       {note.date_string}
     </Link>
   ));
+
   return (
     <main className="h-full flex flex-col bg-gray-20 text-gray-700 dark:bg-gray-700 dark:text-gray-50">
       <header className="border-b-2 border-solid border-gray-200 dark:border-gray-600">
@@ -30,6 +37,13 @@ export default function Layout({ children, notes, selectedNote }) {
         </div>
       </header>
       <div className="flex flex-grow w-full max-w-screen-lg mx-auto">
+        {flashState && (
+          <Alert
+            message={flashState}
+            onDismiss={() => setFlashState(undefined)}
+          ></Alert>
+        )}
+
         <aside className="flex-shrink-0 w-48 p-2">
           <div className="grid gap-2">{notesList}</div>
         </aside>
