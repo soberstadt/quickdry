@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-foreman start -f Procfile.dev
+[ $QD_PORT ] || QD_PORT=3333
+
+QD_PORT=$QD_PORT foreman start -f Procfile.dev
