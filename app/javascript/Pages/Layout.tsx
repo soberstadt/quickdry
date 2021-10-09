@@ -1,33 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { Link, usePage } from "@inertiajs/inertia-react";
+import { usePage } from "@inertiajs/inertia-react";
+import { Page, PageProps } from "@inertiajs/inertia";
 import Alert from "../Components/Alert";
 
-export default function Layout({ children, notes, selectedNote }) {
-  const { flash } = usePage().props;
-  const [flashState, setFlashState] = useState();
-  useEffect(() => setFlashState(flash.message), [flash]);
-
-  const notesLink = (note) => {
-    if (note.id == null) {
-      return "/notes/new";
-    } else {
-      return `/notes/${note.id}/edit`;
-    }
+interface propsInterface extends Page<PageProps> {
+  props: {
+    flash: {
+      message: string;
+    };
+    errors: any;
   };
+}
 
-  const notesList = notes.map((note) => (
-    <Link
-      href={notesLink(note)}
-      className="block p-2 rounded-lg
-      bg-gray-400 bg-opacity-20
-      hover:bg-gray-600 hover:bg-opacity-70 hover:text-gray-50
-      dark:bg-gray-800 dark:bg-opacity-20
-      dark:hover:bg-gray-300 dark:hover:bg-opacity-90 dark:hover:text-gray-700"
-    >
-      {selectedNote.id == note.id ? "> " : ""}
-      {note.date_string}
-    </Link>
-  ));
+export default function Layout({ children }) {
+  const { flash } = usePage<propsInterface>().props;
+  const [flashState, setFlashState] = useState(undefined);
+  useEffect(() => setFlashState(flash.message), [flash]);
 
   return (
     <main className="h-full flex flex-col bg-gray-20 text-gray-700 dark:bg-gray-700 dark:text-gray-50">
@@ -44,10 +32,7 @@ export default function Layout({ children, notes, selectedNote }) {
           ></Alert>
         )}
 
-        <aside className="flex-shrink-0 w-48 p-2">
-          <div className="grid gap-2">{notesList}</div>
-        </aside>
-        <article className="flex flex-col flex-grow">{children}</article>
+        {children}
       </div>
     </main>
   );

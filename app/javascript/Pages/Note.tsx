@@ -1,11 +1,17 @@
 import React, { useEffect } from "react";
 import Layout from "./Layout";
-import { Head } from "@inertiajs/inertia-react";
+import { Head, Link } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 
+type NoteProp = {
+  id: number;
+  date: Date;
+  date_string: string;
+  body: string;
+};
 declare interface NotePageProps {
-  note: { id; date; date_string; body };
-  notes: Array<Object>;
+  note: NoteProp;
+  notes: Array<NoteProp>;
 }
 
 export default function Note({ note, notes }: NotePageProps) {
@@ -31,19 +37,49 @@ export default function Note({ note, notes }: NotePageProps) {
     }
   };
 
+  const notesLink = (note) => {
+    if (note.id == null) {
+      return "/notes/new";
+    } else {
+      return `/notes/${note.id}/edit`;
+    }
+  };
+
+  const notesList = notes.map((iNote) => (
+    <Link
+      href={notesLink(iNote)}
+      className="block p-2 rounded-lg
+      bg-gray-400 bg-opacity-20
+      hover:bg-gray-600 hover:bg-opacity-70 hover:text-gray-50
+      dark:bg-gray-800 dark:bg-opacity-20
+      dark:hover:bg-gray-300 dark:hover:bg-opacity-90 dark:hover:text-gray-700"
+    >
+      {note.id == iNote.id ? "> " : ""}
+      {iNote.date_string}
+    </Link>
+  ));
+
   return (
-    <Layout notes={notes} selectedNote={note}>
+    <Layout>
       <Head title={`QuickDry - ${note.date_string}`} />
-      <h1 className="flex-shrink-0 text-2xl p-2 font-mono">
-        # {note.date_string}
-      </h1>
-      <textarea
-        className="flex-grow text-lg font-mono p-2 outline-none
+
+      <aside className="flex-shrink-0 w-48 p-2">
+        <div className="grid gap-2">{notesList}</div>
+      </aside>
+
+      <article className="flex flex-col flex-grow">
+        <h1 className="flex-shrink-0 text-2xl p-2 font-mono">
+          # {note.date_string}
+        </h1>
+
+        <textarea
+          className="flex-grow text-lg font-mono p-2 outline-none
         bg-gray-400 bg-opacity-10
         dark:bg-gray-800 dark:bg-opacity-10"
-        defaultValue={note.body}
-        onChange={handleChange}
-      ></textarea>
+          defaultValue={note.body}
+          onChange={handleChange}
+        ></textarea>
+      </article>
     </Layout>
   );
 }
