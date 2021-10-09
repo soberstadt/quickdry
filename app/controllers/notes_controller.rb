@@ -10,11 +10,7 @@ class NotesController < ApplicationController
 
   # GET /notes/1/edit
   def show
-    if params[:id].downcase == 'today'
-      new
-    else
-      render_note_page
-    end
+    params[:id].downcase == 'today' ? new : render_note_page
   end
 
   # POST /notes or /notes.json
@@ -60,7 +56,7 @@ class NotesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_note
-    @note = Note.find(params[:id]) unless  params[:id] == 'today'
+    @note = Note.find(params[:id]) unless params[:id] == 'today'
   end
 
   def set_notes
