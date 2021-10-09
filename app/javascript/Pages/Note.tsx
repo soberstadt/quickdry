@@ -39,9 +39,9 @@ export default function Note({ note, notes }: NotePageProps) {
 
   const notesLink = (note) => {
     if (note.id == null) {
-      return "/notes/new";
+      return "/notes/today";
     } else {
-      return `/notes/${note.id}/edit`;
+      return `/notes/${note.id}`;
     }
   };
 

@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: %i[edit update destroy]
-  before_action :set_notes, only: %i[new edit]
+  before_action :set_note, only: %i[show update destroy]
+  before_action :set_notes, only: %i[new show]
 
   # GET /notes/new
   def new
@@ -9,14 +9,18 @@ class NotesController < ApplicationController
   end
 
   # GET /notes/1/edit
-  def edit
-    render_note_page
+  def show
+    if params[:id].downcase == 'today'
+      new
+    else
+      render_note_page
+    end
   end
 
   # POST /notes or /notes.json
   def create
     if build_note.save
-      redirect_to edit_note_path(@note),
+      redirect_to note_path(@note),
                   turbolinks: false,
                   notice: 'Note successfully created.'
     else
@@ -27,7 +31,7 @@ class NotesController < ApplicationController
   # PATCH/PUT /notes/1 or /notes/1.json
   def update
     if @note.update(note_params)
-      redirect_to edit_note_path(@note), turbolinks: false
+      redirect_to note_path(@note), turbolinks: false
     else
       render_note_page status: :unprocessable_entity
     end
@@ -56,7 +60,7 @@ class NotesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_note
-    @note = Note.find(params[:id])
+    @note = Note.find(params[:id]) unless  params[:id] == 'today'
   end
 
   def set_notes
