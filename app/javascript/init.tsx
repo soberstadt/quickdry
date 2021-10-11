@@ -4,6 +4,7 @@ import { createInertiaApp } from "@inertiajs/inertia-react";
 
 const pageMap = {
   Note: require("./Pages/Note"),
+  Search: require("./Pages/Search"),
 };
 
 createInertiaApp({

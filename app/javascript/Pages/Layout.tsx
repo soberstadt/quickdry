@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { usePage } from "@inertiajs/inertia-react";
+import { Link, usePage } from "@inertiajs/inertia-react";
 import { Page, PageProps } from "@inertiajs/inertia";
 import Alert from "../Components/Alert";
 
@@ -21,9 +21,15 @@ export default function Layout({ children }) {
     <main className="h-full flex flex-col bg-gray-20 text-gray-700 dark:bg-gray-700 dark:text-gray-50">
       <header className="border-b-2 border-solid border-gray-200 dark:border-gray-600">
         <div className="w-full max-w-screen-lg mx-auto p-2">
-          <span className="font-bold font-mono">QuickDry</span>
+          <Link href="/notes/today" className="font-bold font-mono">
+            QuickDry
+          </Link>
+          <Link href="/search" className="float-right">
+            Search
+          </Link>
         </div>
       </header>
+
       <div className="flex flex-grow w-full max-w-screen-lg mx-auto">
         {flashState && (
           <Alert

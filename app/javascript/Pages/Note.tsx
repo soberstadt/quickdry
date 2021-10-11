@@ -29,11 +29,12 @@ export default function Note({ note, notes }: NotePageProps) {
   }, []);
 
   const handleChange = (event) => {
-    let data = { body: event.target.value, preserveState: true };
+    const data = { body: event.target.value };
+    const options = { preserveState: true };
     if (note.id !== null) {
-      Inertia.put(`/notes/${note.id}`, data);
+      Inertia.put(`/notes/${note.id}`, data, options);
     } else {
-      Inertia.post(`/notes`, data);
+      Inertia.post(`/notes`, data, options);
     }
   };
 
@@ -78,6 +79,7 @@ export default function Note({ note, notes }: NotePageProps) {
         dark:bg-gray-800 dark:bg-opacity-10"
           defaultValue={note.body}
           onChange={handleChange}
+          autoFocus
         ></textarea>
       </article>
     </Layout>

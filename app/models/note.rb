@@ -10,6 +10,10 @@ class Note < ApplicationRecord
       add_today today_or_not_blank.recent_first
     end
 
+    def today_note
+      find_or_initialize_by(date: Date.today)
+    end
+
     private
 
     def add_today(notes)
@@ -19,10 +23,6 @@ class Note < ApplicationRecord
 
     def note_is_today?(note)
       note.date == Date.today
-    end
-
-    def today_note
-      Note.new(date: Date.today)
     end
   end
 
