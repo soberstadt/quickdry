@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Layout from "./Layout";
 import { Head, Link } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
+import { useHotkeys } from "react-hotkeys-hook";
 
 type NoteProp = {
   id: number;
@@ -27,6 +28,10 @@ export default function Note({ note, notes }: NotePageProps) {
     // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
     return () => clearInterval(interval);
   }, []);
+
+  useHotkeys("cmd+k", () => Inertia.visit("/search"), {
+    enableOnTags: ["TEXTAREA"],
+  });
 
   const handleChange = (event) => {
     const data = { body: event.target.value };

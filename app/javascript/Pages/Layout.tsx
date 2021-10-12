@@ -25,6 +25,9 @@ export default function Layout({ children }) {
             QuickDry
           </Link>
           <Link href="/search" className="float-right">
+            <span className="text-sm text-gray-400 dark:text-gray-600 mr-1">
+              ⌘ + K
+            </span>
             Search
           </Link>
         </div>

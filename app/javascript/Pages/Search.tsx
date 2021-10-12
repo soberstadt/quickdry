@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "./Layout";
 import { Head, Link } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
+import { useHotkeys } from "react-hotkeys-hook";
 
 type NoteProp = {
   id: number;
@@ -20,6 +21,10 @@ declare interface SearchPageProps {
 export default function Note({ results, query }: SearchPageProps) {
   // const [query, setQuery] = useState('')
   const notesLink = (note) => `/notes/${note.id}`;
+
+  useHotkeys("esc", () => Inertia.visit("/notes/today"), {
+    enableOnTags: ["INPUT"],
+  });
 
   const resultsList = results.map((iNote) => (
     <Link
