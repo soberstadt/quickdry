@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Layout from "./Layout";
-import { Head, Link } from "@inertiajs/inertia-react";
-import { Inertia } from "@inertiajs/inertia";
-import { useHotkeys } from "react-hotkeys-hook";
+import { Head, useForm } from "@inertiajs/inertia-react";
 
 type TaskProp = {
   id: number;
@@ -26,19 +24,13 @@ export default function Tasks({ tasks }: TasksPageProps) {
     </div>
   ));
 
-  const [newTask, setNewTask] = useState("");
-
-  function newTaskInputChange(e) {
-    setNewTask(e.target.value);
-  }
+  const { data, setData, post, processing, reset } = useForm({
+    description: "",
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    Inertia.post(
-      "/tasks",
-      { description: newTask },
-      { onSuccess: () => setNewTask("") }
-    );
+    post("/tasks", { onSuccess: () => reset("description") });
   };
 
   return (
@@ -53,14 +45,16 @@ export default function Tasks({ tasks }: TasksPageProps) {
             <label htmlFor="new_task">New Task:</label>
             <input
               id="new_task"
-              value={newTask}
-              onChange={newTaskInputChange}
+              value={data.description}
+              onChange={(e) => setData("description", e.target.value)}
               className="text-black text-xl w-64
                 p-2 outline-none
                 bg-gray-400 bg-opacity-10
                 dark:bg-gray-800 dark:bg-opacity-10 dark:text-gray-300"
             />
-            <button type="submit">Save</button>
+            <button type="submit" disabled={processing}>
+              Save
+            </button>
           </form>
         </div>
       </div>
