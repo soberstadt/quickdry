@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, usePage } from "@inertiajs/inertia-react";
-import { Page, PageProps } from "@inertiajs/inertia";
+import { Inertia, Page, PageProps } from "@inertiajs/inertia";
 import Alert from "../Components/Alert";
+import { useHotkeys } from "react-hotkeys-hook";
 
 interface propsInterface extends Page<PageProps> {
   props: {
@@ -17,6 +18,10 @@ export default function Layout({ children }) {
   const [flashState, setFlashState] = useState(undefined);
   useEffect(() => setFlashState(flash.message), [flash]);
 
+  useHotkeys("cmd+k", () => Inertia.visit("/search"), {
+    enableOnTags: ["TEXTAREA"],
+  });
+
   return (
     <main className="h-full flex flex-col bg-gray-20 text-gray-700 dark:bg-gray-700 dark:text-gray-50">
       <header className="border-b-2 border-solid border-gray-200 dark:border-gray-600">
@@ -31,7 +36,7 @@ export default function Layout({ children }) {
             Tasks
           </Link>
           <Link href="/search" className="float-right">
-            <span className="text-sm text-gray-400 dark:text-gray-600 mr-1">
+            <span className="text-xs text-gray-400 dark:text-gray-600 mr-1">
               ⌘ + K
             </span>
             Search

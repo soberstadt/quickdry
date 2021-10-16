@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "./Layout";
 import { Head } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
-import { useHotkeys } from "react-hotkeys-hook";
 import NotesList from "../Components/NotesList";
 
 type NoteProp = {
@@ -17,10 +16,6 @@ export declare interface NotePageProps {
 }
 
 export default function Note({ note, notes }: NotePageProps) {
-  useHotkeys("cmd+k", () => Inertia.visit("/search"), {
-    enableOnTags: ["TEXTAREA"],
-  });
-
   const handleChange = (event) => {
     const data = { body: event.target.value };
     const options = { preserveState: true };
