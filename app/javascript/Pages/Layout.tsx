@@ -24,6 +24,12 @@ export default function Layout({ children }) {
           <Link href="/notes/today" className="font-bold font-mono">
             QuickDry
           </Link>
+          <Link href="/notes/today" className="ml-4">
+            Notes
+          </Link>
+          <Link href="/tasks" className="ml-4">
+            Tasks
+          </Link>
           <Link href="/search" className="float-right">
             <span className="text-sm text-gray-400 dark:text-gray-600 mr-1">
               ⌘ + K

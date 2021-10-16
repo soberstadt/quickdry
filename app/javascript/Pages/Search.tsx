@@ -18,8 +18,7 @@ declare interface SearchPageProps {
   query: string;
 }
 
-export default function Note({ results, query }: SearchPageProps) {
-  // const [query, setQuery] = useState('')
+export default function Search({ results, query }: SearchPageProps) {
   const notesLink = (note) => `/notes/${note.id}`;
 
   useHotkeys("esc", () => Inertia.visit("/notes/today"), {
