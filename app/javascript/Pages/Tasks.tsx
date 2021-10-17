@@ -1,4 +1,5 @@
 import React from "react";
+import Linkify from "react-linkify";
 import Layout from "./Layout";
 import { Head } from "@inertiajs/inertia-react";
 import NewTask from "../Components/NewTask";
@@ -13,6 +14,11 @@ declare interface TasksPageProps {
 }
 
 export default function Tasks({ tasks }: TasksPageProps) {
+  const decorateLink = (decoratedHref, decoratedText, key) => (
+    <a target="blank" href={decoratedHref} key={key} className="text-blue-500">
+      {decoratedText}
+    </a>
+  );
   const tasksList = tasks.map((task) => (
     <div
       key={task.id}
@@ -20,7 +26,7 @@ export default function Tasks({ tasks }: TasksPageProps) {
       bg-gray-400 bg-opacity-20
       dark:bg-gray-800 dark:bg-opacity-20"
     >
-      <div>{task.description}</div>
+      <Linkify componentDecorator={decorateLink}>{task.description}</Linkify>
     </div>
   ));
 
