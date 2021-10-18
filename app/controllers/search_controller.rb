@@ -1,3 +1,4 @@
+# typed: true
 class SearchController < ApplicationController
   include ActionView::Helpers::TextHelper
 

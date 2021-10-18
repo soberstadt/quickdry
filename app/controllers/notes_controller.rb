@@ -1,3 +1,4 @@
+# typed: false
 class NotesController < ApplicationController
   before_action :set_note, only: %i[show update destroy]
   before_action :set_notes, only: %i[new show]

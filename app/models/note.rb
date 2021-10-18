@@ -1,3 +1,4 @@
+# typed: false
 class Note < ApplicationRecord
   scope :recent_first, -> { order(date: :desc) }
   scope :exportable, -> { where.not(body: '') }

@@ -1,3 +1,4 @@
+# typed: true
 class ExportToFileJob < ApplicationJob
   queue_as :default
 

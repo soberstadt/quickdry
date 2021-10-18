@@ -5,3 +5,4 @@
 /config/storage.yml
 /db/schema.rb
 /public
+/sorbet

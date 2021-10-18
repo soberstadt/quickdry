@@ -1,3 +1,4 @@
+# typed: false
 # stolen from https://github.com/inertiajs/inertia-rails/pull/72
 module InertiaCSRF
   extend ActiveSupport::Concern

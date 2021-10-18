@@ -1,3 +1,4 @@
+# typed: true
 class TasksController < ApplicationController
   def index
     render inertia: 'Tasks', props: { tasks: tasks }
