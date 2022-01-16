@@ -62,7 +62,7 @@ export default function Search({ results, query }: SearchPageProps) {
             className="text-black text-xl w-64
             p-2 outline-none
             bg-gray-400 bg-opacity-10
-            dark:bg-gray-800 dark:bg-opacity-10"
+            dark:text-gray-300 dark:bg-gray-800 dark:bg-opacity-10"
             onChange={handleChange}
             defaultValue={query}
           ></input>
