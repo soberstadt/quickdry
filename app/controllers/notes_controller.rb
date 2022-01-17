@@ -15,17 +15,20 @@ class NotesController < ApplicationController
   end
 
   # GET /notes/new
+  sig { void }
   def new
     @note = Note.new
     render_note_page
   end
 
   # GET /notes/1/edit
+  sig { void }
   def show
     @note.persisted? ? render_note_page : new
   end
 
   # POST /notes or /notes.json
+  sig { void }
   def create
     if build_note.save
       redirect_to note_path(@note),
@@ -37,6 +40,7 @@ class NotesController < ApplicationController
   end
 
   # PATCH/PUT /notes/1 or /notes/1.json
+  sig { void }
   def update
     if @note.update(note_params)
       redirect_to note_path(@note), turbolinks: false
@@ -46,6 +50,7 @@ class NotesController < ApplicationController
   end
 
   # DELETE /notes/1 or /notes/1.json
+  sig { void }
   def destroy
     @note.destroy
     redirect_to new_note_path, notice: 'Note was successfully destroyed.'

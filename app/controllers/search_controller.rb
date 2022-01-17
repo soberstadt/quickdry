@@ -1,7 +1,10 @@
 # typed: true
 class SearchController < ApplicationController
+  extend T::Sig
+
   include ActionView::Helpers::TextHelper
 
+  sig { void }
   def index
     render inertia: 'Search',
            props: {
