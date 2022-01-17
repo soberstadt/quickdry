@@ -4,6 +4,8 @@
 
 # typed: strict
 
+module ::Colorize::ClassMethods; end
+module ::Colorize::InstanceMethods; end
 module ::Rake::DSL; end
 module ::Rake::FileUtilsExt; end
 module ::Spring; end

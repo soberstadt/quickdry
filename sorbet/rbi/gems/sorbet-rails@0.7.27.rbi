@@ -305,8 +305,8 @@ module SorbetRails::ModelUtils
 
   abstract!
 
-  sig { params(root: Parlour::RbiGenerator::Namespace, method_name: String, parameters: T.nilable(T::Array[Parlour::RbiGenerator::Parameter]), builtin_query_method: T::Boolean).void }
-  def add_relation_query_method(root, method_name, parameters: T.unsafe(nil), builtin_query_method: T.unsafe(nil)); end
+  sig { params(root: Parlour::RbiGenerator::Namespace, method_name: String, parameters: T.nilable(T::Array[Parlour::RbiGenerator::Parameter]), builtin_query_method: T::Boolean, custom_return_value: T.nilable(String)).void }
+  def add_relation_query_method(root, method_name, parameters: T.unsafe(nil), builtin_query_method: T.unsafe(nil), custom_return_value: T.unsafe(nil)); end
 
   sig { params(method_name: T.any(String, Symbol)).returns(T::Boolean) }
   def exists_class_method?(method_name); end
