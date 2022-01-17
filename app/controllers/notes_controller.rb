@@ -1,7 +1,18 @@
-# typed: false
+# typed: true
 class NotesController < ApplicationController
+  extend T::Sig
+
   before_action :set_note, only: %i[show update destroy]
   before_action :set_notes, only: %i[new show]
+
+  class NoteControllerParams < T::Struct
+    class NoteParams < T::Struct
+      const :body, T.nilable(String)
+    end
+
+    const :note, T.nilable(NoteParams)
+    const :id, T.nilable(String)
+  end
 
   # GET /notes/new
   def new
@@ -57,10 +68,10 @@ class NotesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_note
-    if params[:id] == 'today'
+    if controller_params.id == 'today'
       @note = Note.today_note
     else
-      @note = Note.find(params[:id])
+      @note = Note.find(controller_params.id)
     end
   end
 
@@ -72,7 +83,13 @@ class NotesController < ApplicationController
     set_notes.map { |note| note.as_json.slice('id', 'date_string') }
   end
 
+  sig { returns(NoteControllerParams) }
+  def controller_params
+    TypedParams[NoteControllerParams].new.extract!(params)
+  end
+
+  sig { returns(Hash) }
   def note_params
-    params.require(:note).permit(:body)
+    T.must(controller_params.note).serialize
   end
 end

@@ -1,4 +1,4 @@
-# typed: false
+# typed: true
 class Note < ApplicationRecord
   scope :recent_first, -> { order(date: :desc) }
   scope :exportable, -> { where.not(body: '') }
@@ -34,12 +34,12 @@ class Note < ApplicationRecord
   def date_string
     return 'Today' if date.nil? || date == Date.today
     return 'Yesterday' if date == (Date.today - 1.day)
-    return date.strftime('%B %e') if date.year == Date.today.year
+    return date&.strftime('%B %e') if date&.year == Date.today.year
     date.to_s
   end
 
   def as_markdown
-    "#{markdown_title}\n\n#{body.strip}"
+    "#{markdown_title}\n\n#{body&.strip}"
   end
 
   private
