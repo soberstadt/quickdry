@@ -24,6 +24,7 @@ class Note < ApplicationRecord
     private
 
     def add_today(notes)
+      notes = notes.to_a
       return notes if notes.any? { |note| note_is_today?(note) }
       [today_note] + notes
     end
