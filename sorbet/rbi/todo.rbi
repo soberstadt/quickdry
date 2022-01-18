@@ -10,6 +10,9 @@ module ::Rake::DSL; end
 module ::Rake::FileUtilsExt; end
 module ::Spring; end
 module ActionMailer::Base::Mail::Message; end
+module ActiveSupport::Dependencies::Blamable; end
+module ActiveSupport::Dependencies::Loadable; end
+module ActiveSupport::Dependencies::ModuleConstMissing; end
 module Haml::AttributeParser; end
 module Haml::Parser::SPECIAL_CHARACTERS; end
 module Haml::VERSION; end

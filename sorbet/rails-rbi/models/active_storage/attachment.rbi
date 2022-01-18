@@ -67,6 +67,50 @@ class ActiveStorage::Attachment < ActiveStorage::Record
   extend ActiveStorage::Attachment::CustomFinderMethods
   extend ActiveStorage::Attachment::QueryMethodsReturningRelation
   RelationType = T.type_alias { T.any(ActiveStorage::Attachment::ActiveRecord_Relation, ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy, ActiveStorage::Attachment::ActiveRecord_AssociationRelation) }
+
+  sig { params(args: T.untyped).returns(ActiveStorage::Attachment::ActiveRecord_Relation) }
+  def self.with_all_variant_records(*args); end
+end
+
+class ActiveStorage::Attachment::ActiveRecord_Relation < ActiveRecord::Relation
+  include ActiveStorage::Attachment::ActiveRelation_WhereNot
+  include ActiveStorage::Attachment::CustomFinderMethods
+  include ActiveStorage::Attachment::QueryMethodsReturningRelation
+  Elem = type_member(fixed: ActiveStorage::Attachment)
+
+  sig { params(args: T.untyped).returns(ActiveStorage::Attachment::ActiveRecord_Relation) }
+  def with_all_variant_records(*args); end
+end
+
+class ActiveStorage::Attachment::ActiveRecord_AssociationRelation < ActiveRecord::AssociationRelation
+  include ActiveStorage::Attachment::ActiveRelation_WhereNot
+  include ActiveStorage::Attachment::CustomFinderMethods
+  include ActiveStorage::Attachment::QueryMethodsReturningAssociationRelation
+  Elem = type_member(fixed: ActiveStorage::Attachment)
+
+  sig { params(args: T.untyped).returns(ActiveStorage::Attachment::ActiveRecord_AssociationRelation) }
+  def with_all_variant_records(*args); end
+end
+
+class ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
+  include ActiveStorage::Attachment::CustomFinderMethods
+  include ActiveStorage::Attachment::QueryMethodsReturningAssociationRelation
+  Elem = type_member(fixed: ActiveStorage::Attachment)
+
+  sig { params(args: T.untyped).returns(ActiveStorage::Attachment::ActiveRecord_AssociationRelation) }
+  def with_all_variant_records(*args); end
+
+  sig { params(records: T.any(ActiveStorage::Attachment, T::Array[ActiveStorage::Attachment])).returns(T.self_type) }
+  def <<(*records); end
+
+  sig { params(records: T.any(ActiveStorage::Attachment, T::Array[ActiveStorage::Attachment])).returns(T.self_type) }
+  def append(*records); end
+
+  sig { params(records: T.any(ActiveStorage::Attachment, T::Array[ActiveStorage::Attachment])).returns(T.self_type) }
+  def push(*records); end
+
+  sig { params(records: T.any(ActiveStorage::Attachment, T::Array[ActiveStorage::Attachment])).returns(T.self_type) }
+  def concat(*records); end
 end
 
 module ActiveStorage::Attachment::QueryMethodsReturningRelation
@@ -299,36 +343,4 @@ module ActiveStorage::Attachment::QueryMethodsReturningAssociationRelation
     ).returns(ActiveRecord::Batches::BatchEnumerator)
   end
   def in_batches(of: 1000, start: nil, finish: nil, load: false, error_on_ignore: nil, &block); end
-end
-
-class ActiveStorage::Attachment::ActiveRecord_Relation < ActiveRecord::Relation
-  include ActiveStorage::Attachment::ActiveRelation_WhereNot
-  include ActiveStorage::Attachment::CustomFinderMethods
-  include ActiveStorage::Attachment::QueryMethodsReturningRelation
-  Elem = type_member(fixed: ActiveStorage::Attachment)
-end
-
-class ActiveStorage::Attachment::ActiveRecord_AssociationRelation < ActiveRecord::AssociationRelation
-  include ActiveStorage::Attachment::ActiveRelation_WhereNot
-  include ActiveStorage::Attachment::CustomFinderMethods
-  include ActiveStorage::Attachment::QueryMethodsReturningAssociationRelation
-  Elem = type_member(fixed: ActiveStorage::Attachment)
-end
-
-class ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
-  include ActiveStorage::Attachment::CustomFinderMethods
-  include ActiveStorage::Attachment::QueryMethodsReturningAssociationRelation
-  Elem = type_member(fixed: ActiveStorage::Attachment)
-
-  sig { params(records: T.any(ActiveStorage::Attachment, T::Array[ActiveStorage::Attachment])).returns(T.self_type) }
-  def <<(*records); end
-
-  sig { params(records: T.any(ActiveStorage::Attachment, T::Array[ActiveStorage::Attachment])).returns(T.self_type) }
-  def append(*records); end
-
-  sig { params(records: T.any(ActiveStorage::Attachment, T::Array[ActiveStorage::Attachment])).returns(T.self_type) }
-  def push(*records); end
-
-  sig { params(records: T.any(ActiveStorage::Attachment, T::Array[ActiveStorage::Attachment])).returns(T.self_type) }
-  def concat(*records); end
 end
