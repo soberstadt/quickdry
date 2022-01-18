@@ -1,0 +1,16 @@
+{
+  "name": "QuickDry",
+  "short_name": "QuickDry",
+  "description": "Take notes fast!",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/notes/today",
+  "display": "standalone",
+  "theme_color": "#EBEDEF",
+  "background_color": "#FFFFFF"
+}
