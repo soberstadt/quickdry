@@ -26,7 +26,6 @@ module ActiveModel::API
 
   mixes_in_class_methods GeneratedClassMethods
   mixes_in_class_methods ::ActiveModel::Validations::ClassMethods
-  mixes_in_class_methods ::ActiveModel::Naming
   mixes_in_class_methods ::ActiveModel::Callbacks
   mixes_in_class_methods ::ActiveSupport::Callbacks::ClassMethods
   mixes_in_class_methods ::ActiveSupport::DescendantsTracker
@@ -174,7 +173,7 @@ module ActiveModel::AttributeMethods
   mixes_in_class_methods ::ActiveModel::AttributeMethods::ClassMethods
 
   def attribute_missing(match, *args, &block); end
-  def method_missing(method, *args, &block); end
+  def method_missing(method, *args, **_arg2, &block); end
   def respond_to?(method, include_private_methods = T.unsafe(nil)); end
   def respond_to_without_attributes?(*_arg0); end
 
@@ -251,6 +250,7 @@ class ActiveModel::AttributeMethods::ClassMethods::AttributeMethodMatcher::Attri
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -292,9 +292,9 @@ class ActiveModel::AttributeSet
   def []=(name, value); end
   def accessed; end
   def deep_dup; end
-  def each_value(*_arg0, &_arg1); end
-  def except(*_arg0, &_arg1); end
-  def fetch(*_arg0, &_arg1); end
+  def each_value(*_arg0, **_arg1, &_arg2); end
+  def except(*_arg0, **_arg1, &_arg2); end
+  def fetch(*_arg0, **_arg1, &_arg2); end
   def fetch_value(name, &block); end
   def freeze; end
   def key?(name); end
@@ -552,12 +552,12 @@ class ActiveModel::Errors
   def added?(attribute, type = T.unsafe(nil), options = T.unsafe(nil)); end
   def as_json(options = T.unsafe(nil)); end
   def attribute_names; end
-  def clear(*args, &block); end
+  def clear(*args, **_arg1, &block); end
   def copy!(other); end
   def delete(attribute, type = T.unsafe(nil), **options); end
   def details; end
-  def each(*args, &block); end
-  def empty?(*args, &block); end
+  def each(*args, **_arg1, &block); end
+  def empty?(*args, **_arg1, &block); end
   def errors; end
   def full_message(attribute, message); end
   def full_messages; end
@@ -574,10 +574,10 @@ class ActiveModel::Errors
   def messages_for(attribute); end
   def objects; end
   def of_kind?(attribute, type = T.unsafe(nil)); end
-  def size(*args, &block); end
+  def size(*args, **_arg1, &block); end
   def to_a; end
   def to_hash(full_messages = T.unsafe(nil)); end
-  def uniq!(*args, &block); end
+  def uniq!(*args, **_arg1, &block); end
   def where(attribute, type = T.unsafe(nil), **options); end
 
   private
@@ -623,13 +623,13 @@ class ActiveModel::LazyAttributeHash
   def []=(key, value); end
   def deep_dup; end
   def each_key(&block); end
-  def each_value(*_arg0, &_arg1); end
-  def except(*_arg0, &_arg1); end
-  def fetch(*_arg0, &_arg1); end
+  def each_value(*_arg0, **_arg1, &_arg2); end
+  def except(*_arg0, **_arg1, &_arg2); end
+  def fetch(*_arg0, **_arg1, &_arg2); end
   def key?(key); end
   def marshal_dump; end
   def marshal_load(values); end
-  def transform_values(*_arg0, &_arg1); end
+  def transform_values(*_arg0, **_arg1, &_arg2); end
 
   protected
 
@@ -695,7 +695,6 @@ module ActiveModel::Model
 
   mixes_in_class_methods GeneratedClassMethods
   mixes_in_class_methods ::ActiveModel::Validations::ClassMethods
-  mixes_in_class_methods ::ActiveModel::Naming
   mixes_in_class_methods ::ActiveModel::Callbacks
   mixes_in_class_methods ::ActiveSupport::Callbacks::ClassMethods
   mixes_in_class_methods ::ActiveSupport::DescendantsTracker
@@ -725,22 +724,22 @@ class ActiveModel::Name
 
   def initialize(klass, namespace = T.unsafe(nil), name = T.unsafe(nil), locale = T.unsafe(nil)); end
 
-  def !~(*_arg0, &_arg1); end
-  def <=>(*_arg0, &_arg1); end
+  def !~(*_arg0, **_arg1, &_arg2); end
+  def <=>(*_arg0, **_arg1, &_arg2); end
   def ==(arg); end
   def ===(arg); end
-  def =~(*_arg0, &_arg1); end
-  def as_json(*_arg0, &_arg1); end
+  def =~(*_arg0, **_arg1, &_arg2); end
+  def as_json(*_arg0, **_arg1, &_arg2); end
   def cache_key; end
   def collection; end
   def collection=(_arg0); end
   def element; end
   def element=(_arg0); end
-  def eql?(*_arg0, &_arg1); end
+  def eql?(*_arg0, **_arg1, &_arg2); end
   def human(options = T.unsafe(nil)); end
   def i18n_key; end
   def i18n_key=(_arg0); end
-  def match?(*_arg0, &_arg1); end
+  def match?(*_arg0, **_arg1, &_arg2); end
   def name; end
   def name=(_arg0); end
   def param_key; end
@@ -753,8 +752,8 @@ class ActiveModel::Name
   def singular=(_arg0); end
   def singular_route_key; end
   def singular_route_key=(_arg0); end
-  def to_s(*_arg0, &_arg1); end
-  def to_str(*_arg0, &_arg1); end
+  def to_s(*_arg0, **_arg1, &_arg2); end
+  def to_str(*_arg0, **_arg1, &_arg2); end
   def uncountable?; end
 
   private
@@ -786,7 +785,7 @@ class ActiveModel::NestedError < ::ActiveModel::Error
   def initialize(base, inner_error, override_options = T.unsafe(nil)); end
 
   def inner_error; end
-  def message(*args, &block); end
+  def message(*args, **_arg1, &block); end
 end
 
 class ActiveModel::NullMutationTracker
@@ -878,7 +877,7 @@ end
 module ActiveModel::Type
   class << self
     def default_value; end
-    def lookup(*_arg0, &_arg1); end
+    def lookup(*_arg0, **_arg1, &_arg2); end
     def register(type_name, klass = T.unsafe(nil), &block); end
     def registry; end
     def registry=(_arg0); end
@@ -1067,7 +1066,7 @@ ActiveModel::Type::Integer::DEFAULT_LIMIT = T.let(T.unsafe(nil), Integer)
 class ActiveModel::Type::Registry
   def initialize; end
 
-  def lookup(symbol, *args); end
+  def lookup(symbol, *args, **_arg2); end
   def register(type_name, klass = T.unsafe(nil), &block); end
 
   private
@@ -1136,6 +1135,7 @@ end
 module ActiveModel::VERSION; end
 ActiveModel::VERSION::MAJOR = T.let(T.unsafe(nil), Integer)
 ActiveModel::VERSION::MINOR = T.let(T.unsafe(nil), Integer)
+ActiveModel::VERSION::PRE = T.let(T.unsafe(nil), String)
 ActiveModel::VERSION::STRING = T.let(T.unsafe(nil), String)
 ActiveModel::VERSION::TINY = T.let(T.unsafe(nil), Integer)
 
@@ -1153,7 +1153,6 @@ module ActiveModel::Validations
 
   mixes_in_class_methods GeneratedClassMethods
   mixes_in_class_methods ::ActiveModel::Validations::ClassMethods
-  mixes_in_class_methods ::ActiveModel::Naming
   mixes_in_class_methods ::ActiveModel::Callbacks
   mixes_in_class_methods ::ActiveSupport::Callbacks::ClassMethods
   mixes_in_class_methods ::ActiveSupport::DescendantsTracker

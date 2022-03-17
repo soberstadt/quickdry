@@ -28,6 +28,8 @@ end
 
 module Loofah::Elements; end
 Loofah::Elements::BLOCK_LEVEL = T.let(T.unsafe(nil), Set)
+Loofah::Elements::INLINE_LINE_BREAK = T.let(T.unsafe(nil), Set)
+Loofah::Elements::LINEBREAKERS = T.let(T.unsafe(nil), Set)
 Loofah::Elements::LOOSE_BLOCK_LEVEL = T.let(T.unsafe(nil), Set)
 Loofah::Elements::STRICT_BLOCK_LEVEL = T.let(T.unsafe(nil), Set)
 Loofah::Elements::STRICT_BLOCK_LEVEL_HTML4 = T.let(T.unsafe(nil), Set)

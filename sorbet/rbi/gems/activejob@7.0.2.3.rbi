@@ -79,7 +79,7 @@ class ActiveJob::Base
   def _run_perform_callbacks(&block); end
   def logger; end
   def logger=(val); end
-  def queue_adapter(*_arg0, &_arg1); end
+  def queue_adapter(*_arg0, **_arg1, &_arg2); end
   def queue_name_prefix; end
   def queue_name_prefix=(_arg0); end
   def queue_name_prefix?; end
@@ -125,8 +125,8 @@ class ActiveJob::Base
     def retry_jitter=(value); end
     def return_false_on_aborted_enqueue; end
     def return_false_on_aborted_enqueue=(value); end
-    def skip_after_callbacks_if_terminated(*args, &block); end
-    def skip_after_callbacks_if_terminated=(*args, &block); end
+    def skip_after_callbacks_if_terminated(*args, **_arg1, &block); end
+    def skip_after_callbacks_if_terminated=(*args, **_arg1, &block); end
   end
 end
 
@@ -174,8 +174,8 @@ end
 class ActiveJob::ConfiguredJob
   def initialize(job_class, options = T.unsafe(nil)); end
 
-  def perform_later(*_arg0, &_arg1); end
-  def perform_now(*_arg0, &_arg1); end
+  def perform_later(*_arg0, **_arg1, &_arg2); end
+  def perform_now(*_arg0, **_arg1, &_arg2); end
 end
 
 module ActiveJob::Core
@@ -183,7 +183,7 @@ module ActiveJob::Core
 
   mixes_in_class_methods ::ActiveJob::Core::ClassMethods
 
-  def initialize(*arguments); end
+  def initialize(*arguments, **_arg1); end
 
   def arguments; end
   def arguments=(_arg0); end
@@ -243,11 +243,11 @@ module ActiveJob::Enqueuing
 end
 
 module ActiveJob::Enqueuing::ClassMethods
-  def perform_later(*_arg0, &_arg1); end
+  def perform_later(*_arg0, **_arg1, &_arg2); end
 
   private
 
-  def job_or_instantiate(*args); end
+  def job_or_instantiate(*args, **_arg1); end
 end
 
 module ActiveJob::Exceptions
@@ -311,7 +311,7 @@ end
 
 module ActiveJob::Execution::ClassMethods
   def execute(job_data); end
-  def perform_now(*_arg0, &_arg1); end
+  def perform_now(*_arg0, **_arg1, &_arg2); end
 end
 
 module ActiveJob::Instrumentation
@@ -606,9 +606,9 @@ class ActiveJob::Serializers::ObjectSerializer
   def klass; end
 
   class << self
-    def deserialize(*_arg0, &_arg1); end
-    def serialize(*_arg0, &_arg1); end
-    def serialize?(*_arg0, &_arg1); end
+    def deserialize(*_arg0, **_arg1, &_arg2); end
+    def serialize(*_arg0, **_arg1, &_arg2); end
+    def serialize?(*_arg0, **_arg1, &_arg2); end
   end
 end
 
@@ -669,10 +669,10 @@ module ActiveJob::TestHelper
   def assert_performed_jobs(number, only: T.unsafe(nil), except: T.unsafe(nil), queue: T.unsafe(nil), &block); end
   def assert_performed_with(job: T.unsafe(nil), args: T.unsafe(nil), at: T.unsafe(nil), queue: T.unsafe(nil), priority: T.unsafe(nil), &block); end
   def before_setup; end
-  def enqueued_jobs(*_arg0, &_arg1); end
+  def enqueued_jobs(*_arg0, **_arg1, &_arg2); end
   def enqueued_jobs=(arg); end
   def perform_enqueued_jobs(only: T.unsafe(nil), except: T.unsafe(nil), queue: T.unsafe(nil), at: T.unsafe(nil), &block); end
-  def performed_jobs(*_arg0, &_arg1); end
+  def performed_jobs(*_arg0, **_arg1, &_arg2); end
   def performed_jobs=(arg); end
   def queue_adapter; end
   def queue_adapter_for_test; end
@@ -725,5 +725,6 @@ end
 module ActiveJob::VERSION; end
 ActiveJob::VERSION::MAJOR = T.let(T.unsafe(nil), Integer)
 ActiveJob::VERSION::MINOR = T.let(T.unsafe(nil), Integer)
+ActiveJob::VERSION::PRE = T.let(T.unsafe(nil), String)
 ActiveJob::VERSION::STRING = T.let(T.unsafe(nil), String)
 ActiveJob::VERSION::TINY = T.let(T.unsafe(nil), Integer)

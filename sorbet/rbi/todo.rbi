@@ -4,18 +4,16 @@
 
 # typed: strict
 
-module ::Colorize::ClassMethods; end
-module ::Colorize::InstanceMethods; end
 module ::Rake::DSL; end
 module ::Rake::FileUtilsExt; end
 module ::Spring; end
 module ActionMailer::Base::Mail::Message; end
 module ActiveSupport::Dependencies::Blamable; end
 module ActiveSupport::Dependencies::Loadable; end
-module ActiveSupport::Dependencies::ModuleConstMissing; end
 module Haml::AttributeParser; end
 module Haml::Parser::SPECIAL_CHARACTERS; end
 module Haml::VERSION; end
 module RBS::Parser; end
 module RBS::Parser::KEYWORDS_RE; end
+module Rack::Session::Dalli; end
 module T::Private::Methods::Signature; end

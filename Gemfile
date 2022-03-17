@@ -13,7 +13,7 @@ gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'inertia_rails'
 
-gem 'esbuild-rails'
+gem 'jsbundling-rails'
 gem 'cssbundling-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'

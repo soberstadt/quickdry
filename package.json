@@ -2,14 +2,14 @@
   "name": "myapp",
   "private": "true",
   "scripts": {
-    "build": "esbuild app/javascript/application.js  --outfile=app/assets/esbuilds/application.js --bundle",
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
     "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css"
   },
   "dependencies": {
     "@inertiajs/inertia": "^0.10.1",
     "@inertiajs/inertia-react": "^0.7.1",
     "autoprefixer": "^10.3.5",
-    "esbuild": "^0.12.25",
+    "esbuild": "^0.14.27",
     "postcss": "^8.3.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.1",

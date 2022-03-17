@@ -203,44 +203,44 @@ module AbstractController::Callbacks::ClassMethods
 end
 
 module AbstractController::Collector
-  def atom(*args, &block); end
-  def bmp(*args, &block); end
-  def css(*args, &block); end
-  def csv(*args, &block); end
-  def gif(*args, &block); end
-  def gzip(*args, &block); end
-  def html(*args, &block); end
-  def ics(*args, &block); end
-  def jpeg(*args, &block); end
-  def js(*args, &block); end
-  def json(*args, &block); end
-  def m4a(*args, &block); end
-  def mp3(*args, &block); end
-  def mp4(*args, &block); end
-  def mpeg(*args, &block); end
-  def multipart_form(*args, &block); end
-  def ogg(*args, &block); end
-  def otf(*args, &block); end
-  def pdf(*args, &block); end
-  def png(*args, &block); end
-  def rss(*args, &block); end
-  def svg(*args, &block); end
-  def text(*args, &block); end
-  def tiff(*args, &block); end
-  def ttf(*args, &block); end
-  def url_encoded_form(*args, &block); end
-  def vcf(*args, &block); end
-  def vtt(*args, &block); end
-  def webm(*args, &block); end
-  def woff(*args, &block); end
-  def woff2(*args, &block); end
-  def xml(*args, &block); end
-  def yaml(*args, &block); end
-  def zip(*args, &block); end
+  def atom(*args, **_arg1, &block); end
+  def bmp(*args, **_arg1, &block); end
+  def css(*args, **_arg1, &block); end
+  def csv(*args, **_arg1, &block); end
+  def gif(*args, **_arg1, &block); end
+  def gzip(*args, **_arg1, &block); end
+  def html(*args, **_arg1, &block); end
+  def ics(*args, **_arg1, &block); end
+  def jpeg(*args, **_arg1, &block); end
+  def js(*args, **_arg1, &block); end
+  def json(*args, **_arg1, &block); end
+  def m4a(*args, **_arg1, &block); end
+  def mp3(*args, **_arg1, &block); end
+  def mp4(*args, **_arg1, &block); end
+  def mpeg(*args, **_arg1, &block); end
+  def multipart_form(*args, **_arg1, &block); end
+  def ogg(*args, **_arg1, &block); end
+  def otf(*args, **_arg1, &block); end
+  def pdf(*args, **_arg1, &block); end
+  def png(*args, **_arg1, &block); end
+  def rss(*args, **_arg1, &block); end
+  def svg(*args, **_arg1, &block); end
+  def text(*args, **_arg1, &block); end
+  def tiff(*args, **_arg1, &block); end
+  def ttf(*args, **_arg1, &block); end
+  def url_encoded_form(*args, **_arg1, &block); end
+  def vcf(*args, **_arg1, &block); end
+  def vtt(*args, **_arg1, &block); end
+  def webm(*args, **_arg1, &block); end
+  def woff(*args, **_arg1, &block); end
+  def woff2(*args, **_arg1, &block); end
+  def xml(*args, **_arg1, &block); end
+  def yaml(*args, **_arg1, &block); end
+  def zip(*args, **_arg1, &block); end
 
   private
 
-  def method_missing(symbol, *args, &block); end
+  def method_missing(symbol, *args, **_arg2, &block); end
 
   class << self
     def generate_method_for_mime(mime); end
@@ -615,7 +615,7 @@ class ActionController::Base < ::ActionController::Metal
   def etaggers; end
   def etaggers=(_arg0); end
   def etaggers?; end
-  def flash(*_arg0, &_arg1); end
+  def flash(*_arg0, **_arg1, &_arg2); end
   def forgery_protection_origin_check; end
   def forgery_protection_origin_check=(value); end
   def forgery_protection_strategy; end
@@ -754,15 +754,15 @@ class ActionController::Base < ::ActionController::Metal
 end
 
 module ActionController::Base::HelperMethods
-  def alert(*args, &block); end
-  def combined_fragment_cache_key(*args, &block); end
-  def content_security_policy?(*args, &block); end
-  def content_security_policy_nonce(*args, &block); end
-  def cookies(*args, &block); end
-  def form_authenticity_token(*args, &block); end
-  def notice(*args, &block); end
-  def protect_against_forgery?(*args, &block); end
-  def view_cache_dependencies(*args, &block); end
+  def alert(*args, **_arg1, &block); end
+  def combined_fragment_cache_key(*args, **_arg1, &block); end
+  def content_security_policy?(*args, **_arg1, &block); end
+  def content_security_policy_nonce(*args, **_arg1, &block); end
+  def cookies(*args, **_arg1, &block); end
+  def form_authenticity_token(*args, **_arg1, &block); end
+  def notice(*args, **_arg1, &block); end
+  def protect_against_forgery?(*args, **_arg1, &block); end
+  def view_cache_dependencies(*args, **_arg1, &block); end
 end
 
 ActionController::Base::MODULES = T.let(T.unsafe(nil), Array)
@@ -1305,14 +1305,14 @@ class ActionController::Metal < ::AbstractController::Base
 
   def initialize; end
 
-  def content_type(*_arg0, &_arg1); end
+  def content_type(*_arg0, **_arg1, &_arg2); end
   def content_type=(arg); end
   def controller_name; end
   def dispatch(name, request, response); end
-  def headers(*_arg0, &_arg1); end
-  def location(*_arg0, &_arg1); end
+  def headers(*_arg0, **_arg1, &_arg2); end
+  def location(*_arg0, **_arg1, &_arg2); end
   def location=(arg); end
-  def media_type(*_arg0, &_arg1); end
+  def media_type(*_arg0, **_arg1, &_arg2); end
   def middleware_stack; end
   def middleware_stack=(_arg0); end
   def middleware_stack?; end
@@ -1325,11 +1325,11 @@ class ActionController::Metal < ::AbstractController::Base
   def response; end
   def response=(_arg0); end
   def response_body=(body); end
-  def response_code(*_arg0, &_arg1); end
-  def session(*_arg0, &_arg1); end
+  def response_code(*_arg0, **_arg1, &_arg2); end
+  def session(*_arg0, **_arg1, &_arg2); end
   def set_request!(request); end
   def set_response!(response); end
-  def status(*_arg0, &_arg1); end
+  def status(*_arg0, **_arg1, &_arg2); end
   def status=(arg); end
   def to_a; end
   def url_for(string); end
@@ -1345,7 +1345,7 @@ class ActionController::Metal < ::AbstractController::Base
     def middleware_stack; end
     def middleware_stack=(value); end
     def middleware_stack?; end
-    def use(*_arg0, &_arg1); end
+    def use(*_arg0, **_arg1, &_arg2); end
   end
 end
 
@@ -1443,7 +1443,7 @@ class ActionController::Parameters
   def []=(key, value); end
   def always_permitted_parameters; end
   def always_permitted_parameters=(val); end
-  def as_json(*_arg0, &_arg1); end
+  def as_json(*_arg0, **_arg1, &_arg2); end
   def compact; end
   def compact!; end
   def compact_blank; end
@@ -1456,24 +1456,24 @@ class ActionController::Parameters
   def delete_if(&block); end
   def dig(*keys); end
   def each(&block); end
-  def each_key(*_arg0, &_arg1); end
+  def each_key(*_arg0, **_arg1, &_arg2); end
   def each_pair(&block); end
   def each_value(&block); end
-  def empty?(*_arg0, &_arg1); end
+  def empty?(*_arg0, **_arg1, &_arg2); end
   def eql?(other); end
   def except(*keys); end
   def extract!(*keys); end
   def fetch(key, *args); end
-  def has_key?(*_arg0, &_arg1); end
-  def has_value?(*_arg0, &_arg1); end
+  def has_key?(*_arg0, **_arg1, &_arg2); end
+  def has_value?(*_arg0, **_arg1, &_arg2); end
   def hash; end
-  def include?(*_arg0, &_arg1); end
+  def include?(*_arg0, **_arg1, &_arg2); end
   def init_with(coder); end
   def inspect; end
   def keep_if(&block); end
-  def key?(*_arg0, &_arg1); end
-  def keys(*_arg0, &_arg1); end
-  def member?(*_arg0, &_arg1); end
+  def key?(*_arg0, **_arg1, &_arg2); end
+  def keys(*_arg0, **_arg1, &_arg2); end
+  def member?(*_arg0, **_arg1, &_arg2); end
   def merge(other_hash); end
   def merge!(other_hash); end
   def permit(*filters); end
@@ -1494,15 +1494,15 @@ class ActionController::Parameters
   def to_hash; end
   def to_param(*args); end
   def to_query(*args); end
-  def to_s(*_arg0, &_arg1); end
+  def to_s(*_arg0, **_arg1, &_arg2); end
   def to_unsafe_h; end
   def to_unsafe_hash; end
   def transform_keys(&block); end
   def transform_keys!(&block); end
   def transform_values; end
   def transform_values!; end
-  def value?(*_arg0, &_arg1); end
-  def values(*_arg0, &_arg1); end
+  def value?(*_arg0, **_arg1, &_arg2); end
+  def values(*_arg0, **_arg1, &_arg2); end
   def values_at(*keys); end
   def with_defaults(other_hash); end
   def with_defaults!(other_hash); end
@@ -1782,7 +1782,7 @@ end
 
 module ActionController::Rendering::ClassMethods
   def inherited(klass); end
-  def render(*_arg0, &_arg1); end
+  def render(*_arg0, **_arg1, &_arg2); end
   def renderer; end
   def setup_renderer!; end
 end
@@ -3046,22 +3046,22 @@ module ActionDispatch::Integration::Runner
   def app; end
   def assertions; end
   def assertions=(assertions); end
-  def assigns(*_arg0, &_arg1); end
+  def assigns(*_arg0, **_arg1, &_arg2); end
   def before_setup; end
-  def cookies(*_arg0, &_arg1); end
+  def cookies(*_arg0, **_arg1, &_arg2); end
   def copy_session_variables!; end
   def create_session(app); end
   def default_url_options; end
   def default_url_options=(options); end
-  def delete(*_arg0, &_arg1); end
-  def follow_redirect!(*_arg0, &_arg1); end
-  def get(*_arg0, &_arg1); end
-  def head(*_arg0, &_arg1); end
+  def delete(*_arg0, **_arg1, &_arg2); end
+  def follow_redirect!(*_arg0, **_arg1, &_arg2); end
+  def get(*_arg0, **_arg1, &_arg2); end
+  def head(*_arg0, **_arg1, &_arg2); end
   def integration_session; end
   def open_session; end
-  def patch(*_arg0, &_arg1); end
-  def post(*_arg0, &_arg1); end
-  def put(*_arg0, &_arg1); end
+  def patch(*_arg0, **_arg1, &_arg2); end
+  def post(*_arg0, **_arg1, &_arg2); end
+  def put(*_arg0, **_arg1, &_arg2); end
   def remove!; end
   def reset!; end
   def root_session; end
@@ -3069,7 +3069,7 @@ module ActionDispatch::Integration::Runner
 
   private
 
-  def method_missing(method, *args, &block); end
+  def method_missing(method, *args, **_arg2, &block); end
   def respond_to_missing?(method, _); end
 end
 
@@ -3094,21 +3094,21 @@ class ActionDispatch::Integration::Session
 
   def accept; end
   def accept=(_arg0); end
-  def body(*_arg0, &_arg1); end
+  def body(*_arg0, **_arg1, &_arg2); end
   def controller; end
   def cookies; end
   def default_url_options; end
   def default_url_options=(_arg0); end
   def default_url_options?; end
-  def headers(*_arg0, &_arg1); end
+  def headers(*_arg0, **_arg1, &_arg2); end
   def host; end
   def host!(_arg0); end
   def host=(_arg0); end
   def https!(flag = T.unsafe(nil)); end
   def https?; end
-  def path(*_arg0, &_arg1); end
+  def path(*_arg0, **_arg1, &_arg2); end
   def process(method, path, params: T.unsafe(nil), headers: T.unsafe(nil), env: T.unsafe(nil), xhr: T.unsafe(nil), as: T.unsafe(nil)); end
-  def redirect?(*_arg0, &_arg1); end
+  def redirect?(*_arg0, **_arg1, &_arg2); end
   def remote_addr; end
   def remote_addr=(_arg0); end
   def request; end
@@ -3116,8 +3116,8 @@ class ActionDispatch::Integration::Session
   def request_count=(_arg0); end
   def reset!; end
   def response; end
-  def status(*_arg0, &_arg1); end
-  def status_message(*_arg0, &_arg1); end
+  def status(*_arg0, **_arg1, &_arg2); end
+  def status_message(*_arg0, **_arg1, &_arg2); end
   def url_options; end
 
   private
@@ -3231,6 +3231,7 @@ class ActionDispatch::Journey::Format::Parameter < ::Struct
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -3856,9 +3857,9 @@ class ActionDispatch::MiddlewareStack
   def delete(target); end
   def delete!(target); end
   def each(&block); end
-  def insert(index, klass, *args, &block); end
-  def insert_after(index, *args, &block); end
-  def insert_before(index, klass, *args, &block); end
+  def insert(index, klass, *args, **_arg3, &block); end
+  def insert_after(index, *args, **_arg2, &block); end
+  def insert_before(index, klass, *args, **_arg3, &block); end
   def last; end
   def middlewares; end
   def middlewares=(_arg0); end
@@ -3866,9 +3867,9 @@ class ActionDispatch::MiddlewareStack
   def move_after(target, source); end
   def move_before(target, source); end
   def size; end
-  def swap(target, *args, &block); end
-  def unshift(klass, *args, &block); end
-  def use(klass, *args, &block); end
+  def swap(target, *args, **_arg2, &block); end
+  def unshift(klass, *args, **_arg2, &block); end
+  def use(klass, *args, **_arg2, &block); end
 
   private
 
@@ -4294,8 +4295,8 @@ class ActionDispatch::Response
 
   def initialize(status = T.unsafe(nil), header = T.unsafe(nil), body = T.unsafe(nil)); end
 
-  def [](*_arg0, &_arg1); end
-  def []=(*_arg0, &_arg1); end
+  def [](*_arg0, **_arg1, &_arg2); end
+  def []=(*_arg0, **_arg1, &_arg2); end
   def _cache_control; end
   def _cache_control=(v); end
   def abort; end
@@ -4395,6 +4396,7 @@ class ActionDispatch::Response::ContentTypeHeader < ::Struct
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -4925,6 +4927,7 @@ class ActionDispatch::Routing::RouteSet::Config < ::Struct
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -5132,7 +5135,7 @@ module ActionDispatch::Routing::UrlFor
 
   mixes_in_class_methods GeneratedClassMethods
 
-  def initialize(*_arg0, &_arg1); end
+  def initialize(*_arg0, **_arg1, &_arg2); end
 
   def full_url_for(options = T.unsafe(nil)); end
   def route_for(name, *args); end
@@ -5262,14 +5265,6 @@ class ActionDispatch::Session::CookieStore::SessionId
   def cookie_value; end
 end
 
-class ActionDispatch::Session::MemCacheStore < ::Rack::Session::Dalli
-  include ::ActionDispatch::Session::Compatibility
-  include ::ActionDispatch::Session::StaleSessionCheck
-  include ::ActionDispatch::Session::SessionObject
-
-  def initialize(app, options = T.unsafe(nil)); end
-end
-
 module ActionDispatch::Session::SessionObject
   def loaded_session?(session); end
   def prepare_session(req); end
@@ -5360,6 +5355,7 @@ end
 module ActionPack::VERSION; end
 ActionPack::VERSION::MAJOR = T.let(T.unsafe(nil), Integer)
 ActionPack::VERSION::MINOR = T.let(T.unsafe(nil), Integer)
+ActionPack::VERSION::PRE = T.let(T.unsafe(nil), String)
 ActionPack::VERSION::STRING = T.let(T.unsafe(nil), String)
 ActionPack::VERSION::TINY = T.let(T.unsafe(nil), Integer)
 

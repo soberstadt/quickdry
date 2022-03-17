@@ -175,7 +175,7 @@ class ActiveRecord::Associations::Association
   def loaded?; end
   def marshal_dump; end
   def marshal_load(data); end
-  def options(*_arg0, &_arg1); end
+  def options(*_arg0, **_arg1, &_arg2); end
   def owner; end
   def reflection; end
   def reload(force = T.unsafe(nil)); end
@@ -460,177 +460,177 @@ class ActiveRecord::Associations::CollectionProxy < ::ActiveRecord::Relation
 
   def <<(*records); end
   def ==(other); end
-  def _select!(*_arg0, &_arg1); end
-  def and(*_arg0, &_arg1); end
-  def and!(*_arg0, &_arg1); end
-  def annotate(*_arg0, &_arg1); end
-  def annotate!(*_arg0, &_arg1); end
-  def annotate_values(*_arg0, &_arg1); end
+  def _select!(*_arg0, **_arg1, &_arg2); end
+  def and(*_arg0, **_arg1, &_arg2); end
+  def and!(*_arg0, **_arg1, &_arg2); end
+  def annotate(*_arg0, **_arg1, &_arg2); end
+  def annotate!(*_arg0, **_arg1, &_arg2); end
+  def annotate_values(*_arg0, **_arg1, &_arg2); end
   def annotate_values=(arg); end
   def append(*records); end
-  def arel(*_arg0, &_arg1); end
+  def arel(*_arg0, **_arg1, &_arg2); end
   def build(attributes = T.unsafe(nil), &block); end
   def calculate(operation, column_name); end
   def clear; end
   def concat(*records); end
-  def construct_join_dependency(*_arg0, &_arg1); end
+  def construct_join_dependency(*_arg0, **_arg1, &_arg2); end
   def create(attributes = T.unsafe(nil), &block); end
   def create!(attributes = T.unsafe(nil), &block); end
-  def create_with(*_arg0, &_arg1); end
-  def create_with!(*_arg0, &_arg1); end
-  def create_with_value(*_arg0, &_arg1); end
+  def create_with(*_arg0, **_arg1, &_arg2); end
+  def create_with!(*_arg0, **_arg1, &_arg2); end
+  def create_with_value(*_arg0, **_arg1, &_arg2); end
   def create_with_value=(arg); end
   def delete(*records); end
   def delete_all(dependent = T.unsafe(nil)); end
   def destroy(*records); end
   def destroy_all; end
-  def distinct(*_arg0, &_arg1); end
-  def distinct!(*_arg0, &_arg1); end
-  def distinct_value(*_arg0, &_arg1); end
+  def distinct(*_arg0, **_arg1, &_arg2); end
+  def distinct!(*_arg0, **_arg1, &_arg2); end
+  def distinct_value(*_arg0, **_arg1, &_arg2); end
   def distinct_value=(arg); end
-  def eager_load(*_arg0, &_arg1); end
-  def eager_load!(*_arg0, &_arg1); end
-  def eager_load_values(*_arg0, &_arg1); end
+  def eager_load(*_arg0, **_arg1, &_arg2); end
+  def eager_load!(*_arg0, **_arg1, &_arg2); end
+  def eager_load_values(*_arg0, **_arg1, &_arg2); end
   def eager_load_values=(arg); end
   def empty?; end
-  def except(*_arg0, &_arg1); end
-  def excluding(*_arg0, &_arg1); end
-  def excluding!(*_arg0, &_arg1); end
-  def extending(*_arg0, &_arg1); end
-  def extending!(*_arg0, &_arg1); end
-  def extending_values(*_arg0, &_arg1); end
+  def except(*_arg0, **_arg1, &_arg2); end
+  def excluding(*_arg0, **_arg1, &_arg2); end
+  def excluding!(*_arg0, **_arg1, &_arg2); end
+  def extending(*_arg0, **_arg1, &_arg2); end
+  def extending!(*_arg0, **_arg1, &_arg2); end
+  def extending_values(*_arg0, **_arg1, &_arg2); end
   def extending_values=(arg); end
-  def extensions(*_arg0, &_arg1); end
-  def extract_associated(*_arg0, &_arg1); end
+  def extensions(*_arg0, **_arg1, &_arg2); end
+  def extract_associated(*_arg0, **_arg1, &_arg2); end
   def find(*args); end
-  def from(*_arg0, &_arg1); end
-  def from!(*_arg0, &_arg1); end
-  def from_clause(*_arg0, &_arg1); end
+  def from(*_arg0, **_arg1, &_arg2); end
+  def from!(*_arg0, **_arg1, &_arg2); end
+  def from_clause(*_arg0, **_arg1, &_arg2); end
   def from_clause=(arg); end
-  def group(*_arg0, &_arg1); end
-  def group!(*_arg0, &_arg1); end
-  def group_values(*_arg0, &_arg1); end
+  def group(*_arg0, **_arg1, &_arg2); end
+  def group!(*_arg0, **_arg1, &_arg2); end
+  def group_values(*_arg0, **_arg1, &_arg2); end
   def group_values=(arg); end
-  def having(*_arg0, &_arg1); end
-  def having!(*_arg0, &_arg1); end
-  def having_clause(*_arg0, &_arg1); end
+  def having(*_arg0, **_arg1, &_arg2); end
+  def having!(*_arg0, **_arg1, &_arg2); end
+  def having_clause(*_arg0, **_arg1, &_arg2); end
   def having_clause=(arg); end
-  def in_order_of(*_arg0, &_arg1); end
+  def in_order_of(*_arg0, **_arg1, &_arg2); end
   def include?(record); end
-  def includes(*_arg0, &_arg1); end
-  def includes!(*_arg0, &_arg1); end
-  def includes_values(*_arg0, &_arg1); end
+  def includes(*_arg0, **_arg1, &_arg2); end
+  def includes!(*_arg0, **_arg1, &_arg2); end
+  def includes_values(*_arg0, **_arg1, &_arg2); end
   def includes_values=(arg); end
-  def insert(*_arg0, &_arg1); end
-  def insert!(*_arg0, &_arg1); end
-  def insert_all(*_arg0, &_arg1); end
-  def insert_all!(*_arg0, &_arg1); end
+  def insert(*_arg0, **_arg1, &_arg2); end
+  def insert!(*_arg0, **_arg1, &_arg2); end
+  def insert_all(*_arg0, **_arg1, &_arg2); end
+  def insert_all!(*_arg0, **_arg1, &_arg2); end
   def inspect; end
-  def invert_where(*_arg0, &_arg1); end
-  def invert_where!(*_arg0, &_arg1); end
-  def joins(*_arg0, &_arg1); end
-  def joins!(*_arg0, &_arg1); end
-  def joins_values(*_arg0, &_arg1); end
+  def invert_where(*_arg0, **_arg1, &_arg2); end
+  def invert_where!(*_arg0, **_arg1, &_arg2); end
+  def joins(*_arg0, **_arg1, &_arg2); end
+  def joins!(*_arg0, **_arg1, &_arg2); end
+  def joins_values(*_arg0, **_arg1, &_arg2); end
   def joins_values=(arg); end
   def last(limit = T.unsafe(nil)); end
-  def left_joins(*_arg0, &_arg1); end
-  def left_outer_joins(*_arg0, &_arg1); end
-  def left_outer_joins!(*_arg0, &_arg1); end
-  def left_outer_joins_values(*_arg0, &_arg1); end
+  def left_joins(*_arg0, **_arg1, &_arg2); end
+  def left_outer_joins(*_arg0, **_arg1, &_arg2); end
+  def left_outer_joins!(*_arg0, **_arg1, &_arg2); end
+  def left_outer_joins_values(*_arg0, **_arg1, &_arg2); end
   def left_outer_joins_values=(arg); end
-  def limit(*_arg0, &_arg1); end
-  def limit!(*_arg0, &_arg1); end
-  def limit_value(*_arg0, &_arg1); end
+  def limit(*_arg0, **_arg1, &_arg2); end
+  def limit!(*_arg0, **_arg1, &_arg2); end
+  def limit_value(*_arg0, **_arg1, &_arg2); end
   def limit_value=(arg); end
   def load_target; end
   def loaded; end
   def loaded?; end
-  def lock(*_arg0, &_arg1); end
-  def lock!(*_arg0, &_arg1); end
-  def lock_value(*_arg0, &_arg1); end
+  def lock(*_arg0, **_arg1, &_arg2); end
+  def lock!(*_arg0, **_arg1, &_arg2); end
+  def lock_value(*_arg0, **_arg1, &_arg2); end
   def lock_value=(arg); end
-  def merge(*_arg0, &_arg1); end
-  def merge!(*_arg0, &_arg1); end
+  def merge(*_arg0, **_arg1, &_arg2); end
+  def merge!(*_arg0, **_arg1, &_arg2); end
   def new(attributes = T.unsafe(nil), &block); end
-  def none(*_arg0, &_arg1); end
-  def none!(*_arg0, &_arg1); end
-  def offset(*_arg0, &_arg1); end
-  def offset!(*_arg0, &_arg1); end
-  def offset_value(*_arg0, &_arg1); end
+  def none(*_arg0, **_arg1, &_arg2); end
+  def none!(*_arg0, **_arg1, &_arg2); end
+  def offset(*_arg0, **_arg1, &_arg2); end
+  def offset!(*_arg0, **_arg1, &_arg2); end
+  def offset_value(*_arg0, **_arg1, &_arg2); end
   def offset_value=(arg); end
-  def only(*_arg0, &_arg1); end
-  def optimizer_hints(*_arg0, &_arg1); end
-  def optimizer_hints!(*_arg0, &_arg1); end
-  def optimizer_hints_values(*_arg0, &_arg1); end
+  def only(*_arg0, **_arg1, &_arg2); end
+  def optimizer_hints(*_arg0, **_arg1, &_arg2); end
+  def optimizer_hints!(*_arg0, **_arg1, &_arg2); end
+  def optimizer_hints_values(*_arg0, **_arg1, &_arg2); end
   def optimizer_hints_values=(arg); end
-  def or(*_arg0, &_arg1); end
-  def or!(*_arg0, &_arg1); end
-  def order(*_arg0, &_arg1); end
-  def order!(*_arg0, &_arg1); end
-  def order_values(*_arg0, &_arg1); end
+  def or(*_arg0, **_arg1, &_arg2); end
+  def or!(*_arg0, **_arg1, &_arg2); end
+  def order(*_arg0, **_arg1, &_arg2); end
+  def order!(*_arg0, **_arg1, &_arg2); end
+  def order_values(*_arg0, **_arg1, &_arg2); end
   def order_values=(arg); end
   def pluck(*column_names); end
-  def preload(*_arg0, &_arg1); end
-  def preload!(*_arg0, &_arg1); end
-  def preload_values(*_arg0, &_arg1); end
+  def preload(*_arg0, **_arg1, &_arg2); end
+  def preload!(*_arg0, **_arg1, &_arg2); end
+  def preload_values(*_arg0, **_arg1, &_arg2); end
   def preload_values=(arg); end
   def prepend(*args); end
   def proxy_association; end
   def push(*records); end
-  def readonly(*_arg0, &_arg1); end
-  def readonly!(*_arg0, &_arg1); end
-  def readonly_value(*_arg0, &_arg1); end
+  def readonly(*_arg0, **_arg1, &_arg2); end
+  def readonly!(*_arg0, **_arg1, &_arg2); end
+  def readonly_value(*_arg0, **_arg1, &_arg2); end
   def readonly_value=(arg); end
   def records; end
-  def references(*_arg0, &_arg1); end
-  def references!(*_arg0, &_arg1); end
-  def references_values(*_arg0, &_arg1); end
+  def references(*_arg0, **_arg1, &_arg2); end
+  def references!(*_arg0, **_arg1, &_arg2); end
+  def references_values(*_arg0, **_arg1, &_arg2); end
   def references_values=(arg); end
   def reload; end
-  def reorder(*_arg0, &_arg1); end
-  def reorder!(*_arg0, &_arg1); end
-  def reordering_value(*_arg0, &_arg1); end
+  def reorder(*_arg0, **_arg1, &_arg2); end
+  def reorder!(*_arg0, **_arg1, &_arg2); end
+  def reordering_value(*_arg0, **_arg1, &_arg2); end
   def reordering_value=(arg); end
   def replace(other_array); end
-  def reselect(*_arg0, &_arg1); end
-  def reselect!(*_arg0, &_arg1); end
+  def reselect(*_arg0, **_arg1, &_arg2); end
+  def reselect!(*_arg0, **_arg1, &_arg2); end
   def reset; end
   def reset_scope; end
-  def reverse_order(*_arg0, &_arg1); end
-  def reverse_order!(*_arg0, &_arg1); end
-  def reverse_order_value(*_arg0, &_arg1); end
+  def reverse_order(*_arg0, **_arg1, &_arg2); end
+  def reverse_order!(*_arg0, **_arg1, &_arg2); end
+  def reverse_order_value(*_arg0, **_arg1, &_arg2); end
   def reverse_order_value=(arg); end
-  def rewhere(*_arg0, &_arg1); end
+  def rewhere(*_arg0, **_arg1, &_arg2); end
   def scope; end
-  def scoping(*_arg0, &_arg1); end
-  def select_values(*_arg0, &_arg1); end
+  def scoping(*_arg0, **_arg1, &_arg2); end
+  def select_values(*_arg0, **_arg1, &_arg2); end
   def select_values=(arg); end
   def size; end
-  def skip_preloading!(*_arg0, &_arg1); end
-  def skip_query_cache!(*_arg0, &_arg1); end
-  def skip_query_cache_value(*_arg0, &_arg1); end
+  def skip_preloading!(*_arg0, **_arg1, &_arg2); end
+  def skip_query_cache!(*_arg0, **_arg1, &_arg2); end
+  def skip_query_cache_value(*_arg0, **_arg1, &_arg2); end
   def skip_query_cache_value=(arg); end
-  def spawn(*_arg0, &_arg1); end
-  def strict_loading(*_arg0, &_arg1); end
-  def strict_loading!(*_arg0, &_arg1); end
-  def strict_loading_value(*_arg0, &_arg1); end
+  def spawn(*_arg0, **_arg1, &_arg2); end
+  def strict_loading(*_arg0, **_arg1, &_arg2); end
+  def strict_loading!(*_arg0, **_arg1, &_arg2); end
+  def strict_loading_value(*_arg0, **_arg1, &_arg2); end
   def strict_loading_value=(arg); end
-  def structurally_compatible?(*_arg0, &_arg1); end
+  def structurally_compatible?(*_arg0, **_arg1, &_arg2); end
   def take(limit = T.unsafe(nil)); end
   def target; end
-  def uniq!(*_arg0, &_arg1); end
-  def unscope(*_arg0, &_arg1); end
-  def unscope!(*_arg0, &_arg1); end
-  def unscope_values(*_arg0, &_arg1); end
+  def uniq!(*_arg0, **_arg1, &_arg2); end
+  def unscope(*_arg0, **_arg1, &_arg2); end
+  def unscope!(*_arg0, **_arg1, &_arg2); end
+  def unscope_values(*_arg0, **_arg1, &_arg2); end
   def unscope_values=(arg); end
-  def upsert(*_arg0, &_arg1); end
-  def upsert_all(*_arg0, &_arg1); end
-  def values(*_arg0, &_arg1); end
-  def where(*_arg0, &_arg1); end
-  def where!(*_arg0, &_arg1); end
-  def where_clause(*_arg0, &_arg1); end
+  def upsert(*_arg0, **_arg1, &_arg2); end
+  def upsert_all(*_arg0, **_arg1, &_arg2); end
+  def values(*_arg0, **_arg1, &_arg2); end
+  def where(*_arg0, **_arg1, &_arg2); end
+  def where!(*_arg0, **_arg1, &_arg2); end
+  def where_clause(*_arg0, **_arg1, &_arg2); end
   def where_clause=(arg); end
-  def without(*_arg0, &_arg1); end
+  def without(*_arg0, **_arg1, &_arg2); end
 
   private
 
@@ -789,6 +789,7 @@ class ActiveRecord::Associations::JoinDependency::Aliases::Column < ::Struct
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -804,6 +805,7 @@ class ActiveRecord::Associations::JoinDependency::Aliases::Table < ::Struct
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -838,18 +840,18 @@ class ActiveRecord::Associations::JoinDependency::JoinPart
 
   def initialize(base_klass, children); end
 
-  def attribute_types(*_arg0, &_arg1); end
+  def attribute_types(*_arg0, **_arg1, &_arg2); end
   def base_klass; end
   def children; end
-  def column_names(*_arg0, &_arg1); end
+  def column_names(*_arg0, **_arg1, &_arg2); end
   def each(&block); end
   def each_children(&block); end
   def extract_record(row, column_names_with_alias); end
   def instantiate(row, aliases, column_types = T.unsafe(nil), &block); end
   def match?(other); end
-  def primary_key(*_arg0, &_arg1); end
+  def primary_key(*_arg0, **_arg1, &_arg2); end
   def table; end
-  def table_name(*_arg0, &_arg1); end
+  def table_name(*_arg0, **_arg1, &_arg2); end
 end
 
 class ActiveRecord::Associations::Preloader
@@ -1009,7 +1011,7 @@ class ActiveRecord::Associations::SingularAssociation < ::ActiveRecord::Associat
 end
 
 module ActiveRecord::Associations::ThroughAssociation
-  def source_reflection(*_arg0, &_arg1); end
+  def source_reflection(*_arg0, **_arg1, &_arg2); end
 
   private
 
@@ -1469,6 +1471,7 @@ module ActiveRecord::AutosaveAssociation
   private
 
   def _ensure_no_duplicate_errors; end
+  def _record_changed?(reflection, record, key); end
   def around_save_collection_association; end
   def associated_records_to_validate_or_save(association, new_record, autosave); end
   def association_foreign_key_changed?(reflection, record, key); end
@@ -1476,7 +1479,6 @@ module ActiveRecord::AutosaveAssociation
   def custom_validation_context?; end
   def nested_records_changed_for_autosave?; end
   def normalize_reflection_attribute(indexed_attribute, reflection, index, attribute); end
-  def record_changed?(reflection, record, key); end
   def save_belongs_to_association(reflection); end
   def save_collection_association(reflection); end
   def save_has_one_association(reflection); end
@@ -1655,7 +1657,7 @@ class ActiveRecord::Base
   def cache_versioning?; end
   def collection_cache_versioning; end
   def collection_cache_versioning?; end
-  def column_for_attribute(*_arg0, &_arg1); end
+  def column_for_attribute(*_arg0, **_arg1, &_arg2); end
   def default_connection_handler; end
   def default_connection_handler?; end
   def default_role; end
@@ -1676,7 +1678,7 @@ class ActiveRecord::Base
   def lock_optimistically?; end
   def logger; end
   def logger?; end
-  def model_name(*_arg0, &_arg1); end
+  def model_name(*_arg0, **_arg1, &_arg2); end
   def nested_attributes_options; end
   def nested_attributes_options?; end
   def partial_inserts; end
@@ -1706,7 +1708,7 @@ class ActiveRecord::Base
   def time_zone_aware_attributes?; end
   def time_zone_aware_types; end
   def time_zone_aware_types?; end
-  def type_for_attribute(*_arg0, &_arg1); end
+  def type_for_attribute(*_arg0, **_arg1, &_arg2); end
   def validation_context; end
 
   private
@@ -1990,7 +1992,6 @@ module ActiveRecord::Callbacks
   include ::ActiveModel::Validations::Callbacks
 
   mixes_in_class_methods GeneratedClassMethods
-  mixes_in_class_methods ::ActiveModel::Callbacks
   mixes_in_class_methods ::ActiveRecord::Callbacks::ClassMethods
   mixes_in_class_methods ::ActiveModel::Validations::Callbacks::ClassMethods
   mixes_in_class_methods ::ActiveSupport::Callbacks::ClassMethods
@@ -2258,6 +2259,7 @@ class ActiveRecord::ConnectionAdapters::AddColumnDefinition < ::Struct
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -2288,6 +2290,7 @@ class ActiveRecord::ConnectionAdapters::ChangeColumnDefinition < ::Struct
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -2308,6 +2311,7 @@ class ActiveRecord::ConnectionAdapters::CheckConstraintDefinition < ::Struct
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -2331,14 +2335,14 @@ class ActiveRecord::ConnectionAdapters::Column
   def hash; end
   def human_name; end
   def init_with(coder); end
-  def limit(*_arg0, &_arg1); end
+  def limit(*_arg0, **_arg1, &_arg2); end
   def name; end
   def null; end
-  def precision(*_arg0, &_arg1); end
-  def scale(*_arg0, &_arg1); end
-  def sql_type(*_arg0, &_arg1); end
+  def precision(*_arg0, **_arg1, &_arg2); end
+  def scale(*_arg0, **_arg1, &_arg2); end
+  def sql_type(*_arg0, **_arg1, &_arg2); end
   def sql_type_metadata; end
-  def type(*_arg0, &_arg1); end
+  def type(*_arg0, **_arg1, &_arg2); end
   def virtual?; end
 
   private
@@ -2375,6 +2379,7 @@ class ActiveRecord::ConnectionAdapters::ColumnDefinition < ::Struct
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -2452,7 +2457,7 @@ class ActiveRecord::ConnectionAdapters::ConnectionPool
   def connected?; end
   def connection; end
   def connection_class; end
-  def connection_klass(*args, &block); end
+  def connection_klass(*args, **_arg1, &block); end
   def connections; end
   def db_config; end
   def discard!; end
@@ -2470,7 +2475,7 @@ class ActiveRecord::ConnectionAdapters::ConnectionPool
   def remove(conn); end
   def role; end
   def schedule_query(future_result); end
-  def schema_cache(*_arg0, &_arg1); end
+  def schema_cache(*_arg0, **_arg1, &_arg2); end
   def schema_cache=(arg); end
   def shard; end
   def size; end
@@ -2566,6 +2571,7 @@ class ActiveRecord::ConnectionAdapters::CreateIndexDefinition < ::Struct
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -2587,17 +2593,17 @@ module ActiveRecord::ConnectionAdapters::DatabaseStatements
   def add_transaction_record(record, ensure_finalize = T.unsafe(nil)); end
   def begin_db_transaction; end
   def begin_isolated_db_transaction(isolation); end
-  def begin_transaction(*_arg0, &_arg1); end
+  def begin_transaction(*_arg0, **_arg1, &_arg2); end
   def cacheable_query(klass, arel); end
   def commit_db_transaction; end
-  def commit_transaction(*_arg0, &_arg1); end
+  def commit_transaction(*_arg0, **_arg1, &_arg2); end
   def create(arel, name = T.unsafe(nil), pk = T.unsafe(nil), id_value = T.unsafe(nil), sequence_name = T.unsafe(nil), binds = T.unsafe(nil)); end
-  def current_transaction(*_arg0, &_arg1); end
+  def current_transaction(*_arg0, **_arg1, &_arg2); end
   def default_sequence_name(table, column); end
   def delete(arel, name = T.unsafe(nil), binds = T.unsafe(nil)); end
-  def disable_lazy_transactions!(*_arg0, &_arg1); end
+  def disable_lazy_transactions!(*_arg0, **_arg1, &_arg2); end
   def empty_insert_statement_value(primary_key = T.unsafe(nil)); end
-  def enable_lazy_transactions!(*_arg0, &_arg1); end
+  def enable_lazy_transactions!(*_arg0, **_arg1, &_arg2); end
   def exec_delete(sql, name = T.unsafe(nil), binds = T.unsafe(nil)); end
   def exec_insert(sql, name = T.unsafe(nil), binds = T.unsafe(nil), pk = T.unsafe(nil), sequence_name = T.unsafe(nil)); end
   def exec_insert_all(sql, name); end
@@ -2611,8 +2617,8 @@ module ActiveRecord::ConnectionAdapters::DatabaseStatements
   def insert_fixture(fixture, table_name); end
   def insert_fixtures_set(fixture_set, tables_to_delete = T.unsafe(nil)); end
   def mark_transaction_written_if_write(sql); end
-  def materialize_transactions(*_arg0, &_arg1); end
-  def open_transactions(*_arg0, &_arg1); end
+  def materialize_transactions(*_arg0, **_arg1, &_arg2); end
+  def open_transactions(*_arg0, **_arg1, &_arg2); end
   def query(sql, name = T.unsafe(nil)); end
   def query_value(sql, name = T.unsafe(nil)); end
   def query_values(sql, name = T.unsafe(nil)); end
@@ -2620,7 +2626,7 @@ module ActiveRecord::ConnectionAdapters::DatabaseStatements
   def reset_transaction; end
   def rollback_db_transaction; end
   def rollback_to_savepoint(name = T.unsafe(nil)); end
-  def rollback_transaction(*_arg0, &_arg1); end
+  def rollback_transaction(*_arg0, **_arg1, &_arg2); end
   def sanitize_limit(limit); end
   def select_all(arel, name = T.unsafe(nil), binds = T.unsafe(nil), preparable: T.unsafe(nil), async: T.unsafe(nil)); end
   def select_one(arel, name = T.unsafe(nil), binds = T.unsafe(nil)); end
@@ -2636,7 +2642,7 @@ module ActiveRecord::ConnectionAdapters::DatabaseStatements
   def truncate_tables(*table_names); end
   def update(arel, name = T.unsafe(nil), binds = T.unsafe(nil)); end
   def with_yaml_fallback(value); end
-  def within_new_transaction(*_arg0, &_arg1); end
+  def within_new_transaction(*_arg0, **_arg1, &_arg2); end
   def write_query?(sql); end
 
   private
@@ -2704,6 +2710,7 @@ class ActiveRecord::ConnectionAdapters::ForeignKeyDefinition < ::Struct
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -2812,6 +2819,7 @@ class ActiveRecord::ConnectionAdapters::PrimaryKeyDefinition < ::Struct
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -2981,20 +2989,20 @@ class ActiveRecord::ConnectionAdapters::SchemaCreation
   def add_column_options!(sql, options); end
   def add_table_options!(create_sql, o); end
   def column_options(o); end
-  def options_include_default?(*_arg0, &_arg1); end
-  def quote_column_name(*_arg0, &_arg1); end
-  def quote_default_expression(*_arg0, &_arg1); end
-  def quote_table_name(*_arg0, &_arg1); end
+  def options_include_default?(*_arg0, **_arg1, &_arg2); end
+  def quote_column_name(*_arg0, **_arg1, &_arg2); end
+  def quote_default_expression(*_arg0, **_arg1, &_arg2); end
+  def quote_table_name(*_arg0, **_arg1, &_arg2); end
   def quoted_columns(o); end
-  def quoted_columns_for_index(*_arg0, &_arg1); end
-  def supports_check_constraints?(*_arg0, &_arg1); end
-  def supports_foreign_keys?(*_arg0, &_arg1); end
+  def quoted_columns_for_index(*_arg0, **_arg1, &_arg2); end
+  def supports_check_constraints?(*_arg0, **_arg1, &_arg2); end
+  def supports_foreign_keys?(*_arg0, **_arg1, &_arg2); end
   def supports_index_using?; end
-  def supports_indexes_in_create?(*_arg0, &_arg1); end
-  def supports_partial_index?(*_arg0, &_arg1); end
+  def supports_indexes_in_create?(*_arg0, **_arg1, &_arg2); end
+  def supports_partial_index?(*_arg0, **_arg1, &_arg2); end
   def table_modifier_in_create(o); end
   def to_sql(sql); end
-  def type_to_sql(*_arg0, &_arg1); end
+  def type_to_sql(*_arg0, **_arg1, &_arg2); end
   def visit_AddCheckConstraint(o); end
   def visit_AddColumnDefinition(o); end
   def visit_AddForeignKey(o); end
@@ -3030,6 +3038,8 @@ class ActiveRecord::ConnectionAdapters::SchemaDumper < ::ActiveRecord::SchemaDum
     def create(connection, options); end
   end
 end
+
+ActiveRecord::ConnectionAdapters::SchemaDumper::DEFAULT_DATETIME_PRECISION = T.let(T.unsafe(nil), Integer)
 
 module ActiveRecord::ConnectionAdapters::SchemaStatements
   include ::ActiveRecord::Migration::JoinTable
@@ -3174,7 +3184,7 @@ class ActiveRecord::ConnectionAdapters::Table
   def change(column_name, type, **options); end
   def change_default(column_name, default_or_changes); end
   def change_null(column_name, null, default = T.unsafe(nil)); end
-  def check_constraint(*args); end
+  def check_constraint(*args, **options); end
   def column(column_name, type, index: T.unsafe(nil), **options); end
   def column_exists?(column_name, type = T.unsafe(nil), **options); end
   def date(*names, **options); end
@@ -3192,7 +3202,7 @@ class ActiveRecord::ConnectionAdapters::Table
   def references(*args, **options); end
   def remove(*column_names, **options); end
   def remove_belongs_to(*args, **options); end
-  def remove_check_constraint(*args); end
+  def remove_check_constraint(*args, **options); end
   def remove_foreign_key(*args, **options); end
   def remove_index(column_name = T.unsafe(nil), **options); end
   def remove_references(*args, **options); end
@@ -3325,11 +3335,11 @@ class ActiveRecord::ConnectionAdapters::TransactionState
 end
 
 module ActiveRecord::ConnectionHandling
-  def clear_active_connections!(*_arg0, &_arg1); end
-  def clear_all_connections!(*_arg0, &_arg1); end
+  def clear_active_connections!(*_arg0, **_arg1, &_arg2); end
+  def clear_all_connections!(*_arg0, **_arg1, &_arg2); end
   def clear_cache!; end
   def clear_query_caches_for_current_thread; end
-  def clear_reloadable_connections!(*_arg0, &_arg1); end
+  def clear_reloadable_connections!(*_arg0, **_arg1, &_arg2); end
   def connected?; end
   def connected_to(role: T.unsafe(nil), shard: T.unsafe(nil), prevent_writes: T.unsafe(nil), &blk); end
   def connected_to?(role:, shard: T.unsafe(nil)); end
@@ -3342,7 +3352,7 @@ module ActiveRecord::ConnectionHandling
   def connection_specification_name=(_arg0); end
   def connects_to(database: T.unsafe(nil), shards: T.unsafe(nil)); end
   def establish_connection(config_or_env = T.unsafe(nil)); end
-  def flush_idle_connections!(*_arg0, &_arg1); end
+  def flush_idle_connections!(*_arg0, **_arg1, &_arg2); end
   def lookup_connection_handler(handler_key); end
   def primary_class?; end
   def prohibit_shard_swapping(enabled = T.unsafe(nil)); end
@@ -3539,7 +3549,7 @@ class ActiveRecord::DatabaseAlreadyExists < ::ActiveRecord::StatementInvalid; en
 class ActiveRecord::DatabaseConfigurations
   def initialize(configurations = T.unsafe(nil)); end
 
-  def any?(*_arg0, &_arg1); end
+  def any?(*_arg0, **_arg1, &_arg2); end
   def blank?; end
   def configs_for(env_name: T.unsafe(nil), name: T.unsafe(nil), include_replicas: T.unsafe(nil), include_hidden: T.unsafe(nil)); end
   def configurations; end
@@ -3669,32 +3679,33 @@ module ActiveRecord::Delegation
 
   mixes_in_class_methods ::ActiveRecord::Delegation::ClassMethods
 
-  def &(*_arg0, &_arg1); end
-  def +(*_arg0, &_arg1); end
-  def -(*_arg0, &_arg1); end
-  def [](*_arg0, &_arg1); end
-  def as_json(*_arg0, &_arg1); end
-  def compact(*_arg0, &_arg1); end
-  def connection(*_arg0, &_arg1); end
-  def each(*_arg0, &_arg1); end
-  def encode_with(*_arg0, &_arg1); end
-  def in_groups(*_arg0, &_arg1); end
-  def in_groups_of(*_arg0, &_arg1); end
-  def index(*_arg0, &_arg1); end
-  def join(*_arg0, &_arg1); end
-  def length(*_arg0, &_arg1); end
-  def primary_key(*_arg0, &_arg1); end
-  def reverse(*_arg0, &_arg1); end
-  def rindex(*_arg0, &_arg1); end
-  def rotate(*_arg0, &_arg1); end
-  def sample(*_arg0, &_arg1); end
-  def shuffle(*_arg0, &_arg1); end
-  def slice(*_arg0, &_arg1); end
-  def split(*_arg0, &_arg1); end
-  def to_formatted_s(*_arg0, &_arg1); end
-  def to_sentence(*_arg0, &_arg1); end
-  def to_xml(*_arg0, &_arg1); end
-  def |(*_arg0, &_arg1); end
+  def &(*_arg0, **_arg1, &_arg2); end
+  def +(*_arg0, **_arg1, &_arg2); end
+  def -(*_arg0, **_arg1, &_arg2); end
+  def [](*_arg0, **_arg1, &_arg2); end
+  def as_json(*_arg0, **_arg1, &_arg2); end
+  def compact(*_arg0, **_arg1, &_arg2); end
+  def connection(*_arg0, **_arg1, &_arg2); end
+  def each(*_arg0, **_arg1, &_arg2); end
+  def encode_with(*_arg0, **_arg1, &_arg2); end
+  def in_groups(*_arg0, **_arg1, &_arg2); end
+  def in_groups_of(*_arg0, **_arg1, &_arg2); end
+  def index(*_arg0, **_arg1, &_arg2); end
+  def join(*_arg0, **_arg1, &_arg2); end
+  def length(*_arg0, **_arg1, &_arg2); end
+  def primary_key(*_arg0, **_arg1, &_arg2); end
+  def reverse(*_arg0, **_arg1, &_arg2); end
+  def rindex(*_arg0, **_arg1, &_arg2); end
+  def rotate(*_arg0, **_arg1, &_arg2); end
+  def sample(*_arg0, **_arg1, &_arg2); end
+  def shuffle(*_arg0, **_arg1, &_arg2); end
+  def slice(*_arg0, **_arg1, &_arg2); end
+  def split(*_arg0, **_arg1, &_arg2); end
+  def to_formatted_s(*_arg0, **_arg1, &_arg2); end
+  def to_fs(*_arg0, **_arg1, &_arg2); end
+  def to_sentence(*_arg0, **_arg1, &_arg2); end
+  def to_xml(*_arg0, **_arg1, &_arg2); end
+  def |(*_arg0, **_arg1, &_arg2); end
 
   private
 
@@ -3716,7 +3727,7 @@ module ActiveRecord::Delegation::ClassSpecificRelation
 
   private
 
-  def method_missing(method, *args, &block); end
+  def method_missing(method, *args, **_arg2, &block); end
 end
 
 module ActiveRecord::Delegation::ClassSpecificRelation::ClassMethods
@@ -3940,15 +3951,15 @@ module ActiveRecord::Encryption::Configurable
 end
 
 module ActiveRecord::Encryption::Configurable::ClassMethods
-  def cipher(*_arg0, &_arg1); end
+  def cipher(*_arg0, **_arg1, &_arg2); end
   def configure(primary_key:, deterministic_key:, key_derivation_salt:, **properties); end
   def encrypted_attribute_was_declared(klass, name); end
-  def encryptor(*_arg0, &_arg1); end
-  def frozen_encryption(*_arg0, &_arg1); end
-  def install_auto_filtered_parameters(application); end
-  def key_generator(*_arg0, &_arg1); end
-  def key_provider(*_arg0, &_arg1); end
-  def message_serializer(*_arg0, &_arg1); end
+  def encryptor(*_arg0, **_arg1, &_arg2); end
+  def frozen_encryption(*_arg0, **_arg1, &_arg2); end
+  def install_auto_filtered_parameters_hook(application); end
+  def key_generator(*_arg0, **_arg1, &_arg2); end
+  def key_provider(*_arg0, **_arg1, &_arg2); end
+  def message_serializer(*_arg0, **_arg1, &_arg2); end
   def on_encrypted_attribute_declared(&block); end
 end
 
@@ -4057,19 +4068,19 @@ class ActiveRecord::Encryption::EncryptedAttributeType < ::ActiveRecord::Type::T
 
   def initialize(scheme:, cast_type: T.unsafe(nil), previous_type: T.unsafe(nil)); end
 
-  def accessor(*_arg0, &_arg1); end
+  def accessor(*_arg0, **_arg1, &_arg2); end
   def cast_type; end
   def changed_in_place?(raw_old_value, new_value); end
   def deserialize(value); end
-  def deterministic?(*_arg0, &_arg1); end
-  def downcase?(*_arg0, &_arg1); end
-  def fixed?(*_arg0, &_arg1); end
-  def key_provider(*_arg0, &_arg1); end
-  def previous_schemes(*_arg0, &_arg1); end
+  def deterministic?(*_arg0, **_arg1, &_arg2); end
+  def downcase?(*_arg0, **_arg1, &_arg2); end
+  def fixed?(*_arg0, **_arg1, &_arg2); end
+  def key_provider(*_arg0, **_arg1, &_arg2); end
+  def previous_schemes(*_arg0, **_arg1, &_arg2); end
   def previous_types; end
   def scheme; end
   def serialize(value); end
-  def with_context(*_arg0, &_arg1); end
+  def with_context(*_arg0, **_arg1, &_arg2); end
 
   private
 
@@ -4172,7 +4183,6 @@ end
 module ActiveRecord::Encryption::ExtendedDeterministicQueries::CoreQueries
   extend ::ActiveSupport::Concern
 
-  mixes_in_class_methods ::ActiveRecord::Encryption::ExtendedDeterministicQueries::EncryptedQueryArgumentProcessor
   mixes_in_class_methods ::ActiveRecord::Encryption::ExtendedDeterministicQueries::CoreQueries::ClassMethods
 end
 
@@ -4310,7 +4320,7 @@ class ActiveRecord::Encryption::Properties
   def encrypted_data_key_id=(value); end
   def iv; end
   def iv=(value); end
-  def method_missing(method, *args, &block); end
+  def method_missing(method, *args, **_arg2, &block); end
   def to_h; end
   def validate_value_type(value); end
 
@@ -4389,7 +4399,7 @@ class ActiveRecord::Enum::EnumType < ::ActiveModel::Type::Value
   def serializable?(value, &block); end
   def serialize(value); end
   def subtype; end
-  def type(*_arg0, &_arg1); end
+  def type(*_arg0, **_arg1, &_arg2); end
 
   private
 
@@ -4426,11 +4436,11 @@ class ActiveRecord::ExplainRegistry
   def reset; end
 
   class << self
-    def collect(*_arg0, &_arg1); end
+    def collect(*_arg0, **_arg1, &_arg2); end
     def collect=(arg); end
-    def collect?(*_arg0, &_arg1); end
-    def queries(*_arg0, &_arg1); end
-    def reset(*_arg0, &_arg1); end
+    def collect?(*_arg0, **_arg1, &_arg2); end
+    def queries(*_arg0, **_arg1, &_arg2); end
+    def reset(*_arg0, **_arg1, &_arg2); end
 
     private
 
@@ -4670,14 +4680,14 @@ class ActiveRecord::FutureResult
   def initialize(pool, *args, **kwargs); end
 
   def cancel; end
-  def empty?(*_arg0, &_arg1); end
+  def empty?(*_arg0, **_arg1, &_arg2); end
   def execute!(connection); end
   def execute_or_skip; end
   def lock_wait; end
   def pending?; end
   def result; end
   def schedule!(session); end
-  def to_a(*_arg0, &_arg1); end
+  def to_a(*_arg0, **_arg1, &_arg2); end
 
   private
 
@@ -4855,17 +4865,17 @@ class ActiveRecord::InsertAll::Builder
 
   def conflict_target; end
   def into; end
-  def keys(*_arg0, &_arg1); end
-  def keys_including_timestamps(*_arg0, &_arg1); end
+  def keys(*_arg0, **_arg1, &_arg2); end
+  def keys_including_timestamps(*_arg0, **_arg1, &_arg2); end
   def model; end
   def raw_update_sql; end
   def raw_update_sql?; end
-  def record_timestamps?(*_arg0, &_arg1); end
+  def record_timestamps?(*_arg0, **_arg1, &_arg2); end
   def returning; end
-  def skip_duplicates?(*_arg0, &_arg1); end
+  def skip_duplicates?(*_arg0, **_arg1, &_arg2); end
   def touch_model_timestamps_unless(&block); end
   def updatable_columns; end
-  def update_duplicates?(*_arg0, &_arg1); end
+  def update_duplicates?(*_arg0, **_arg1, &_arg2); end
   def values_list; end
 
   private
@@ -5145,7 +5155,7 @@ class ActiveRecord::Migration
   def disable_ddl_transaction; end
   def down; end
   def exec_migration(conn, direction); end
-  def method_missing(method, *arguments, &block); end
+  def method_missing(method, *arguments, **_arg2, &block); end
   def migrate(direction); end
   def name; end
   def name=(_arg0); end
@@ -5184,7 +5194,7 @@ class ActiveRecord::Migration
     def inherited(subclass); end
     def load_schema_if_pending!; end
     def maintain_test_schema!; end
-    def method_missing(name, *args, &block); end
+    def method_missing(name, *args, **_arg2, &block); end
     def migrate(direction); end
     def nearest_delegate; end
     def verbose; end
@@ -5209,51 +5219,51 @@ class ActiveRecord::Migration::CommandRecorder
 
   def initialize(delegate = T.unsafe(nil)); end
 
-  def add_belongs_to(*args, &block); end
-  def add_check_constraint(*args, &block); end
-  def add_column(*args, &block); end
-  def add_foreign_key(*args, &block); end
-  def add_index(*args, &block); end
-  def add_reference(*args, &block); end
-  def add_timestamps(*args, &block); end
-  def change_column(*args, &block); end
-  def change_column_comment(*args, &block); end
-  def change_column_default(*args, &block); end
-  def change_column_null(*args, &block); end
+  def add_belongs_to(*args, **_arg1, &block); end
+  def add_check_constraint(*args, **_arg1, &block); end
+  def add_column(*args, **_arg1, &block); end
+  def add_foreign_key(*args, **_arg1, &block); end
+  def add_index(*args, **_arg1, &block); end
+  def add_reference(*args, **_arg1, &block); end
+  def add_timestamps(*args, **_arg1, &block); end
+  def change_column(*args, **_arg1, &block); end
+  def change_column_comment(*args, **_arg1, &block); end
+  def change_column_default(*args, **_arg1, &block); end
+  def change_column_null(*args, **_arg1, &block); end
   def change_table(table_name, **options); end
-  def change_table_comment(*args, &block); end
+  def change_table_comment(*args, **_arg1, &block); end
   def commands; end
   def commands=(_arg0); end
-  def create_join_table(*args, &block); end
-  def create_table(*args, &block); end
+  def create_join_table(*args, **_arg1, &block); end
+  def create_table(*args, **_arg1, &block); end
   def delegate; end
   def delegate=(_arg0); end
-  def disable_extension(*args, &block); end
-  def drop_join_table(*args, &block); end
-  def drop_table(*args, &block); end
-  def enable_extension(*args, &block); end
-  def execute(*args, &block); end
-  def execute_block(*args, &block); end
+  def disable_extension(*args, **_arg1, &block); end
+  def drop_join_table(*args, **_arg1, &block); end
+  def drop_table(*args, **_arg1, &block); end
+  def enable_extension(*args, **_arg1, &block); end
+  def execute(*args, **_arg1, &block); end
+  def execute_block(*args, **_arg1, &block); end
   def inverse_of(command, args, &block); end
   def invert_add_belongs_to(args, &block); end
   def invert_remove_belongs_to(args, &block); end
   def record(*command, &block); end
-  def remove_belongs_to(*args, &block); end
-  def remove_check_constraint(*args, &block); end
-  def remove_column(*args, &block); end
-  def remove_columns(*args, &block); end
-  def remove_foreign_key(*args, &block); end
-  def remove_index(*args, &block); end
-  def remove_reference(*args, &block); end
-  def remove_timestamps(*args, &block); end
-  def rename_column(*args, &block); end
-  def rename_index(*args, &block); end
-  def rename_table(*args, &block); end
+  def remove_belongs_to(*args, **_arg1, &block); end
+  def remove_check_constraint(*args, **_arg1, &block); end
+  def remove_column(*args, **_arg1, &block); end
+  def remove_columns(*args, **_arg1, &block); end
+  def remove_foreign_key(*args, **_arg1, &block); end
+  def remove_index(*args, **_arg1, &block); end
+  def remove_reference(*args, **_arg1, &block); end
+  def remove_timestamps(*args, **_arg1, &block); end
+  def rename_column(*args, **_arg1, &block); end
+  def rename_index(*args, **_arg1, &block); end
+  def rename_table(*args, **_arg1, &block); end
   def replay(migration); end
   def revert; end
   def reverting; end
   def reverting=(_arg0); end
-  def transaction(*args, &block); end
+  def transaction(*args, **_arg1, &block); end
 
   private
 
@@ -5271,7 +5281,7 @@ class ActiveRecord::Migration::CommandRecorder
   def invert_rename_index(args); end
   def invert_rename_table(args); end
   def invert_transaction(args, &block); end
-  def method_missing(method, *args, &block); end
+  def method_missing(method, *args, **_arg2, &block); end
   def respond_to_missing?(method, _); end
 end
 
@@ -5441,6 +5451,7 @@ class ActiveRecord::Migration::ReversibleBlockHelper < ::Struct
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -5482,19 +5493,19 @@ end
 class ActiveRecord::MigrationProxy < ::Struct
   def initialize(name, version, filename, scope); end
 
-  def announce(*_arg0, &_arg1); end
+  def announce(*_arg0, **_arg1, &_arg2); end
   def basename; end
-  def disable_ddl_transaction(*_arg0, &_arg1); end
+  def disable_ddl_transaction(*_arg0, **_arg1, &_arg2); end
   def filename; end
   def filename=(_); end
-  def migrate(*_arg0, &_arg1); end
+  def migrate(*_arg0, **_arg1, &_arg2); end
   def name; end
   def name=(_); end
   def scope; end
   def scope=(_); end
   def version; end
   def version=(_); end
-  def write(*_arg0, &_arg1); end
+  def write(*_arg0, **_arg1, &_arg2); end
 
   private
 
@@ -5504,6 +5515,7 @@ class ActiveRecord::MigrationProxy < ::Struct
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -5976,6 +5988,7 @@ class ActiveRecord::PredicateBuilder::RangeHandler::RangeWithBinds < ::Struct
   class << self
     def [](*_arg0); end
     def inspect; end
+    def keyword_init?; end
     def members; end
     def new(*_arg0); end
   end
@@ -6210,107 +6223,111 @@ class ActiveRecord::QueryMethods::WhereChain
   def associated(*associations); end
   def missing(*associations); end
   def not(opts, *rest); end
+
+  private
+
+  def scope_association_reflection(association); end
 end
 
 module ActiveRecord::Querying
   def _load_from_sql(result_set, &block); end
   def _query_by_sql(sql, binds = T.unsafe(nil), preparable: T.unsafe(nil), async: T.unsafe(nil)); end
-  def and(*_arg0, &_arg1); end
-  def annotate(*_arg0, &_arg1); end
-  def any?(*_arg0, &_arg1); end
-  def average(*_arg0, &_arg1); end
-  def calculate(*_arg0, &_arg1); end
-  def count(*_arg0, &_arg1); end
+  def and(*_arg0, **_arg1, &_arg2); end
+  def annotate(*_arg0, **_arg1, &_arg2); end
+  def any?(*_arg0, **_arg1, &_arg2); end
+  def average(*_arg0, **_arg1, &_arg2); end
+  def calculate(*_arg0, **_arg1, &_arg2); end
+  def count(*_arg0, **_arg1, &_arg2); end
   def count_by_sql(sql); end
-  def create_or_find_by(*_arg0, &_arg1); end
-  def create_or_find_by!(*_arg0, &_arg1); end
-  def create_with(*_arg0, &_arg1); end
-  def delete_all(*_arg0, &_arg1); end
-  def delete_by(*_arg0, &_arg1); end
-  def destroy_all(*_arg0, &_arg1); end
-  def destroy_by(*_arg0, &_arg1); end
-  def distinct(*_arg0, &_arg1); end
-  def eager_load(*_arg0, &_arg1); end
-  def except(*_arg0, &_arg1); end
-  def excluding(*_arg0, &_arg1); end
-  def exists?(*_arg0, &_arg1); end
-  def extending(*_arg0, &_arg1); end
-  def extract_associated(*_arg0, &_arg1); end
-  def fifth(*_arg0, &_arg1); end
-  def fifth!(*_arg0, &_arg1); end
-  def find(*_arg0, &_arg1); end
-  def find_by(*_arg0, &_arg1); end
-  def find_by!(*_arg0, &_arg1); end
+  def create_or_find_by(*_arg0, **_arg1, &_arg2); end
+  def create_or_find_by!(*_arg0, **_arg1, &_arg2); end
+  def create_with(*_arg0, **_arg1, &_arg2); end
+  def delete_all(*_arg0, **_arg1, &_arg2); end
+  def delete_by(*_arg0, **_arg1, &_arg2); end
+  def destroy_all(*_arg0, **_arg1, &_arg2); end
+  def destroy_by(*_arg0, **_arg1, &_arg2); end
+  def distinct(*_arg0, **_arg1, &_arg2); end
+  def eager_load(*_arg0, **_arg1, &_arg2); end
+  def except(*_arg0, **_arg1, &_arg2); end
+  def excluding(*_arg0, **_arg1, &_arg2); end
+  def exists?(*_arg0, **_arg1, &_arg2); end
+  def extending(*_arg0, **_arg1, &_arg2); end
+  def extract_associated(*_arg0, **_arg1, &_arg2); end
+  def fifth(*_arg0, **_arg1, &_arg2); end
+  def fifth!(*_arg0, **_arg1, &_arg2); end
+  def find(*_arg0, **_arg1, &_arg2); end
+  def find_by(*_arg0, **_arg1, &_arg2); end
+  def find_by!(*_arg0, **_arg1, &_arg2); end
   def find_by_sql(sql, binds = T.unsafe(nil), preparable: T.unsafe(nil), &block); end
-  def find_each(*_arg0, &_arg1); end
-  def find_in_batches(*_arg0, &_arg1); end
-  def find_or_create_by(*_arg0, &_arg1); end
-  def find_or_create_by!(*_arg0, &_arg1); end
-  def find_or_initialize_by(*_arg0, &_arg1); end
-  def find_sole_by(*_arg0, &_arg1); end
-  def first(*_arg0, &_arg1); end
-  def first!(*_arg0, &_arg1); end
-  def first_or_create(*_arg0, &_arg1); end
-  def first_or_create!(*_arg0, &_arg1); end
-  def first_or_initialize(*_arg0, &_arg1); end
-  def forty_two(*_arg0, &_arg1); end
-  def forty_two!(*_arg0, &_arg1); end
-  def fourth(*_arg0, &_arg1); end
-  def fourth!(*_arg0, &_arg1); end
-  def from(*_arg0, &_arg1); end
-  def group(*_arg0, &_arg1); end
-  def having(*_arg0, &_arg1); end
-  def ids(*_arg0, &_arg1); end
-  def in_batches(*_arg0, &_arg1); end
-  def in_order_of(*_arg0, &_arg1); end
-  def includes(*_arg0, &_arg1); end
-  def invert_where(*_arg0, &_arg1); end
-  def joins(*_arg0, &_arg1); end
-  def last(*_arg0, &_arg1); end
-  def last!(*_arg0, &_arg1); end
-  def left_joins(*_arg0, &_arg1); end
-  def left_outer_joins(*_arg0, &_arg1); end
-  def limit(*_arg0, &_arg1); end
-  def lock(*_arg0, &_arg1); end
-  def many?(*_arg0, &_arg1); end
-  def maximum(*_arg0, &_arg1); end
-  def merge(*_arg0, &_arg1); end
-  def minimum(*_arg0, &_arg1); end
-  def none(*_arg0, &_arg1); end
-  def none?(*_arg0, &_arg1); end
-  def offset(*_arg0, &_arg1); end
-  def one?(*_arg0, &_arg1); end
-  def only(*_arg0, &_arg1); end
-  def optimizer_hints(*_arg0, &_arg1); end
-  def or(*_arg0, &_arg1); end
-  def order(*_arg0, &_arg1); end
-  def pick(*_arg0, &_arg1); end
-  def pluck(*_arg0, &_arg1); end
-  def preload(*_arg0, &_arg1); end
-  def readonly(*_arg0, &_arg1); end
-  def references(*_arg0, &_arg1); end
-  def reorder(*_arg0, &_arg1); end
-  def reselect(*_arg0, &_arg1); end
-  def rewhere(*_arg0, &_arg1); end
-  def second(*_arg0, &_arg1); end
-  def second!(*_arg0, &_arg1); end
-  def second_to_last(*_arg0, &_arg1); end
-  def second_to_last!(*_arg0, &_arg1); end
-  def select(*_arg0, &_arg1); end
-  def sole(*_arg0, &_arg1); end
-  def strict_loading(*_arg0, &_arg1); end
-  def sum(*_arg0, &_arg1); end
-  def take(*_arg0, &_arg1); end
-  def take!(*_arg0, &_arg1); end
-  def third(*_arg0, &_arg1); end
-  def third!(*_arg0, &_arg1); end
-  def third_to_last(*_arg0, &_arg1); end
-  def third_to_last!(*_arg0, &_arg1); end
-  def touch_all(*_arg0, &_arg1); end
-  def unscope(*_arg0, &_arg1); end
-  def update_all(*_arg0, &_arg1); end
-  def where(*_arg0, &_arg1); end
-  def without(*_arg0, &_arg1); end
+  def find_each(*_arg0, **_arg1, &_arg2); end
+  def find_in_batches(*_arg0, **_arg1, &_arg2); end
+  def find_or_create_by(*_arg0, **_arg1, &_arg2); end
+  def find_or_create_by!(*_arg0, **_arg1, &_arg2); end
+  def find_or_initialize_by(*_arg0, **_arg1, &_arg2); end
+  def find_sole_by(*_arg0, **_arg1, &_arg2); end
+  def first(*_arg0, **_arg1, &_arg2); end
+  def first!(*_arg0, **_arg1, &_arg2); end
+  def first_or_create(*_arg0, **_arg1, &_arg2); end
+  def first_or_create!(*_arg0, **_arg1, &_arg2); end
+  def first_or_initialize(*_arg0, **_arg1, &_arg2); end
+  def forty_two(*_arg0, **_arg1, &_arg2); end
+  def forty_two!(*_arg0, **_arg1, &_arg2); end
+  def fourth(*_arg0, **_arg1, &_arg2); end
+  def fourth!(*_arg0, **_arg1, &_arg2); end
+  def from(*_arg0, **_arg1, &_arg2); end
+  def group(*_arg0, **_arg1, &_arg2); end
+  def having(*_arg0, **_arg1, &_arg2); end
+  def ids(*_arg0, **_arg1, &_arg2); end
+  def in_batches(*_arg0, **_arg1, &_arg2); end
+  def in_order_of(*_arg0, **_arg1, &_arg2); end
+  def includes(*_arg0, **_arg1, &_arg2); end
+  def invert_where(*_arg0, **_arg1, &_arg2); end
+  def joins(*_arg0, **_arg1, &_arg2); end
+  def last(*_arg0, **_arg1, &_arg2); end
+  def last!(*_arg0, **_arg1, &_arg2); end
+  def left_joins(*_arg0, **_arg1, &_arg2); end
+  def left_outer_joins(*_arg0, **_arg1, &_arg2); end
+  def limit(*_arg0, **_arg1, &_arg2); end
+  def lock(*_arg0, **_arg1, &_arg2); end
+  def many?(*_arg0, **_arg1, &_arg2); end
+  def maximum(*_arg0, **_arg1, &_arg2); end
+  def merge(*_arg0, **_arg1, &_arg2); end
+  def minimum(*_arg0, **_arg1, &_arg2); end
+  def none(*_arg0, **_arg1, &_arg2); end
+  def none?(*_arg0, **_arg1, &_arg2); end
+  def offset(*_arg0, **_arg1, &_arg2); end
+  def one?(*_arg0, **_arg1, &_arg2); end
+  def only(*_arg0, **_arg1, &_arg2); end
+  def optimizer_hints(*_arg0, **_arg1, &_arg2); end
+  def or(*_arg0, **_arg1, &_arg2); end
+  def order(*_arg0, **_arg1, &_arg2); end
+  def pick(*_arg0, **_arg1, &_arg2); end
+  def pluck(*_arg0, **_arg1, &_arg2); end
+  def preload(*_arg0, **_arg1, &_arg2); end
+  def readonly(*_arg0, **_arg1, &_arg2); end
+  def references(*_arg0, **_arg1, &_arg2); end
+  def reorder(*_arg0, **_arg1, &_arg2); end
+  def reselect(*_arg0, **_arg1, &_arg2); end
+  def rewhere(*_arg0, **_arg1, &_arg2); end
+  def second(*_arg0, **_arg1, &_arg2); end
+  def second!(*_arg0, **_arg1, &_arg2); end
+  def second_to_last(*_arg0, **_arg1, &_arg2); end
+  def second_to_last!(*_arg0, **_arg1, &_arg2); end
+  def select(*_arg0, **_arg1, &_arg2); end
+  def sole(*_arg0, **_arg1, &_arg2); end
+  def strict_loading(*_arg0, **_arg1, &_arg2); end
+  def sum(*_arg0, **_arg1, &_arg2); end
+  def take(*_arg0, **_arg1, &_arg2); end
+  def take!(*_arg0, **_arg1, &_arg2); end
+  def third(*_arg0, **_arg1, &_arg2); end
+  def third!(*_arg0, **_arg1, &_arg2); end
+  def third_to_last(*_arg0, **_arg1, &_arg2); end
+  def third_to_last!(*_arg0, **_arg1, &_arg2); end
+  def touch_all(*_arg0, **_arg1, &_arg2); end
+  def unscope(*_arg0, **_arg1, &_arg2); end
+  def update_all(*_arg0, **_arg1, &_arg2); end
+  def where(*_arg0, **_arg1, &_arg2); end
+  def without(*_arg0, **_arg1, &_arg2); end
 end
 
 ActiveRecord::Querying::QUERYING_METHODS = T.let(T.unsafe(nil), Array)
@@ -6563,15 +6580,15 @@ class ActiveRecord::Reflection::PolymorphicReflection < ::ActiveRecord::Reflecti
   def initialize(reflection, previous_reflection); end
 
   def constraints; end
-  def join_foreign_key(*_arg0, &_arg1); end
-  def join_primary_key(*_arg0, &_arg1); end
+  def join_foreign_key(*_arg0, **_arg1, &_arg2); end
+  def join_primary_key(*_arg0, **_arg1, &_arg2); end
   def join_scopes(table, predicate_builder, klass = T.unsafe(nil), record = T.unsafe(nil)); end
-  def klass(*_arg0, &_arg1); end
-  def name(*_arg0, &_arg1); end
-  def plural_name(*_arg0, &_arg1); end
-  def scope(*_arg0, &_arg1); end
-  def scope_for(*_arg0, &_arg1); end
-  def type(*_arg0, &_arg1); end
+  def klass(*_arg0, **_arg1, &_arg2); end
+  def name(*_arg0, **_arg1, &_arg2); end
+  def plural_name(*_arg0, **_arg1, &_arg2); end
+  def scope(*_arg0, **_arg1, &_arg2); end
+  def scope_for(*_arg0, **_arg1, &_arg2); end
+  def type(*_arg0, **_arg1, &_arg2); end
 
   private
 
@@ -6583,58 +6600,58 @@ class ActiveRecord::Reflection::RuntimeReflection < ::ActiveRecord::Reflection::
 
   def aliased_table; end
   def all_includes; end
-  def constraints(*_arg0, &_arg1); end
-  def join_foreign_key(*_arg0, &_arg1); end
+  def constraints(*_arg0, **_arg1, &_arg2); end
+  def join_foreign_key(*_arg0, **_arg1, &_arg2); end
   def join_primary_key(klass = T.unsafe(nil)); end
   def klass; end
-  def scope(*_arg0, &_arg1); end
-  def type(*_arg0, &_arg1); end
+  def scope(*_arg0, **_arg1, &_arg2); end
+  def type(*_arg0, **_arg1, &_arg2); end
 end
 
 class ActiveRecord::Reflection::ThroughReflection < ::ActiveRecord::Reflection::AbstractReflection
   def initialize(delegate_reflection); end
 
-  def active_record(*_arg0, &_arg1); end
-  def active_record_primary_key(*_arg0, &_arg1); end
+  def active_record(*_arg0, **_arg1, &_arg2); end
+  def active_record_primary_key(*_arg0, **_arg1, &_arg2); end
   def add_as_polymorphic_through(reflection, seed); end
   def add_as_source(seed); end
   def add_as_through(seed); end
-  def association_class(*_arg0, &_arg1); end
-  def association_foreign_key(*_arg0, &_arg1); end
+  def association_class(*_arg0, **_arg1, &_arg2); end
+  def association_foreign_key(*_arg0, **_arg1, &_arg2); end
   def association_primary_key(klass = T.unsafe(nil)); end
-  def association_scope_cache(*_arg0, &_arg1); end
+  def association_scope_cache(*_arg0, **_arg1, &_arg2); end
   def autosave=(arg); end
-  def belongs_to?(*_arg0, &_arg1); end
-  def check_eager_loadable!(*_arg0, &_arg1); end
+  def belongs_to?(*_arg0, **_arg1, &_arg2); end
+  def check_eager_loadable!(*_arg0, **_arg1, &_arg2); end
   def check_validity!; end
   def clear_association_scope_cache; end
   def collect_join_chain; end
-  def collection?(*_arg0, &_arg1); end
-  def compute_class(*_arg0, &_arg1); end
+  def collection?(*_arg0, **_arg1, &_arg2); end
+  def compute_class(*_arg0, **_arg1, &_arg2); end
   def constraints; end
-  def extensions(*_arg0, &_arg1); end
-  def foreign_key(*_arg0, &_arg1); end
-  def foreign_type(*_arg0, &_arg1); end
-  def has_inverse?(*_arg0, &_arg1); end
-  def has_one?(*_arg0, &_arg1); end
+  def extensions(*_arg0, **_arg1, &_arg2); end
+  def foreign_key(*_arg0, **_arg1, &_arg2); end
+  def foreign_type(*_arg0, **_arg1, &_arg2); end
+  def has_inverse?(*_arg0, **_arg1, &_arg2); end
+  def has_one?(*_arg0, **_arg1, &_arg2); end
   def has_scope?; end
-  def join_foreign_key(*_arg0, &_arg1); end
-  def join_id_for(*_arg0, &_arg1); end
+  def join_foreign_key(*_arg0, **_arg1, &_arg2); end
+  def join_id_for(*_arg0, **_arg1, &_arg2); end
   def join_primary_key(klass = T.unsafe(nil)); end
   def join_scopes(table, predicate_builder, klass = T.unsafe(nil), record = T.unsafe(nil)); end
-  def join_table(*_arg0, &_arg1); end
+  def join_table(*_arg0, **_arg1, &_arg2); end
   def klass; end
-  def macro(*_arg0, &_arg1); end
-  def name(*_arg0, &_arg1); end
+  def macro(*_arg0, **_arg1, &_arg2); end
+  def name(*_arg0, **_arg1, &_arg2); end
   def nested?; end
-  def options(*_arg0, &_arg1); end
-  def parent_reflection(*_arg0, &_arg1); end
+  def options(*_arg0, **_arg1, &_arg2); end
+  def parent_reflection(*_arg0, **_arg1, &_arg2); end
   def parent_reflection=(arg); end
-  def plural_name(*_arg0, &_arg1); end
-  def polymorphic?(*_arg0, &_arg1); end
-  def polymorphic_inverse_of(*_arg0, &_arg1); end
-  def scope(*_arg0, &_arg1); end
-  def scope_for(*_arg0, &_arg1); end
+  def plural_name(*_arg0, **_arg1, &_arg2); end
+  def polymorphic?(*_arg0, **_arg1, &_arg2); end
+  def polymorphic_inverse_of(*_arg0, **_arg1, &_arg2); end
+  def scope(*_arg0, **_arg1, &_arg2); end
+  def scope_for(*_arg0, **_arg1, &_arg2); end
   def scopes; end
   def source_options; end
   def source_reflection; end
@@ -6643,8 +6660,8 @@ class ActiveRecord::Reflection::ThroughReflection < ::ActiveRecord::Reflection::
   def through_options; end
   def through_reflection; end
   def through_reflection?; end
-  def type(*_arg0, &_arg1); end
-  def validate?(*_arg0, &_arg1); end
+  def type(*_arg0, **_arg1, &_arg2); end
+  def validate?(*_arg0, **_arg1, &_arg2); end
 
   protected
 
@@ -6848,10 +6865,10 @@ class ActiveRecord::Relation::WhereClause
   def +(other); end
   def -(other); end
   def ==(other); end
-  def any?(*_arg0, &_arg1); end
+  def any?(*_arg0, **_arg1, &_arg2); end
   def ast; end
   def contradiction?; end
-  def empty?(*_arg0, &_arg1); end
+  def empty?(*_arg0, **_arg1, &_arg2); end
   def eql?(other); end
   def except(*columns); end
   def extract_attributes; end
@@ -6955,11 +6972,24 @@ module ActiveRecord::Sanitization::ClassMethods
 end
 
 class ActiveRecord::Schema < ::ActiveRecord::Migration::Current
-  def define(info, &block); end
+  include ::ActiveRecord::Schema::Definition
+  extend ::ActiveRecord::Schema::Definition::ClassMethods
 
   class << self
-    def define(info = T.unsafe(nil), &block); end
+    def [](version); end
   end
+end
+
+module ActiveRecord::Schema::Definition
+  extend ::ActiveSupport::Concern
+
+  mixes_in_class_methods ::ActiveRecord::Schema::Definition::ClassMethods
+
+  def define(info, &block); end
+end
+
+module ActiveRecord::Schema::Definition::ClassMethods
+  def define(info = T.unsafe(nil), &block); end
 end
 
 class ActiveRecord::SchemaDumper
@@ -7149,13 +7179,13 @@ class ActiveRecord::Scoping::ScopeRegistry
   def value_for(scope_type, model, skip_inherited_scope = T.unsafe(nil)); end
 
   class << self
-    def current_scope(*_arg0, &_arg1); end
-    def global_current_scope(*_arg0, &_arg1); end
-    def ignore_default_scope(*_arg0, &_arg1); end
+    def current_scope(*_arg0, **_arg1, &_arg2); end
+    def global_current_scope(*_arg0, **_arg1, &_arg2); end
+    def ignore_default_scope(*_arg0, **_arg1, &_arg2); end
     def instance; end
-    def set_current_scope(*_arg0, &_arg1); end
-    def set_global_current_scope(*_arg0, &_arg1); end
-    def set_ignore_default_scope(*_arg0, &_arg1); end
+    def set_current_scope(*_arg0, **_arg1, &_arg2); end
+    def set_global_current_scope(*_arg0, **_arg1, &_arg2); end
+    def set_ignore_default_scope(*_arg0, **_arg1, &_arg2); end
   end
 end
 
@@ -7395,9 +7425,9 @@ class ActiveRecord::TableMetadata
   def associated_table(table_name); end
   def associated_with?(table_name); end
   def has_column?(column_name); end
-  def join_foreign_key(*_arg0, &_arg1); end
-  def join_foreign_type(*_arg0, &_arg1); end
-  def join_primary_key(*_arg0, &_arg1); end
+  def join_foreign_key(*_arg0, **_arg1, &_arg2); end
+  def join_foreign_type(*_arg0, **_arg1, &_arg2); end
+  def join_primary_key(*_arg0, **_arg1, &_arg2); end
   def polymorphic_association?; end
   def predicate_builder; end
   def primary_key; end
@@ -7467,7 +7497,7 @@ module ActiveRecord::Tasks::DatabaseTasks
   def root; end
   def root=(_arg0); end
   def schema_dump_path(db_config, format = T.unsafe(nil)); end
-  def schema_file_type(*args, &block); end
+  def schema_file_type(*args, **_arg1, &block); end
   def schema_up_to_date?(configuration, format = T.unsafe(nil), file = T.unsafe(nil)); end
   def seed_loader; end
   def seed_loader=(_arg0); end
@@ -7507,10 +7537,10 @@ class ActiveRecord::Tasks::MySQLDatabaseTasks
 
   def charset; end
   def collation; end
-  def connection(*_arg0, &_arg1); end
+  def connection(*_arg0, **_arg1, &_arg2); end
   def create; end
   def drop; end
-  def establish_connection(*_arg0, &_arg1); end
+  def establish_connection(*_arg0, **_arg1, &_arg2); end
   def purge; end
   def structure_dump(filename, extra_flags); end
   def structure_load(filename, extra_flags); end
@@ -7536,12 +7566,12 @@ class ActiveRecord::Tasks::PostgreSQLDatabaseTasks
   def initialize(db_config); end
 
   def charset; end
-  def clear_active_connections!(*_arg0, &_arg1); end
+  def clear_active_connections!(*_arg0, **_arg1, &_arg2); end
   def collation; end
-  def connection(*_arg0, &_arg1); end
+  def connection(*_arg0, **_arg1, &_arg2); end
   def create(master_established = T.unsafe(nil)); end
   def drop; end
-  def establish_connection(*_arg0, &_arg1); end
+  def establish_connection(*_arg0, **_arg1, &_arg2); end
   def purge; end
   def structure_dump(filename, extra_flags); end
   def structure_load(filename, extra_flags); end
@@ -7570,10 +7600,10 @@ class ActiveRecord::Tasks::SQLiteDatabaseTasks
   def initialize(db_config, root = T.unsafe(nil)); end
 
   def charset; end
-  def connection(*_arg0, &_arg1); end
+  def connection(*_arg0, **_arg1, &_arg2); end
   def create; end
   def drop; end
-  def establish_connection(*_arg0, &_arg1); end
+  def establish_connection(*_arg0, **_arg1, &_arg2); end
   def purge; end
   def structure_dump(filename, extra_flags); end
   def structure_load(filename, extra_flags); end
@@ -7804,7 +7834,7 @@ end
 module ActiveRecord::Type
   class << self
     def adapter_name_from(model); end
-    def add_modifier(*_arg0, &_arg1); end
+    def add_modifier(*_arg0, **_arg1, &_arg2); end
     def default_value; end
     def lookup(*args, adapter: T.unsafe(nil), **kwargs); end
     def register(type_name, klass = T.unsafe(nil), **options, &block); end
@@ -7995,7 +8025,7 @@ class ActiveRecord::TypeCaster::Connection
 
   private
 
-  def connection(*_arg0, &_arg1); end
+  def connection(*_arg0, **_arg1, &_arg2); end
   def table_name; end
 end
 
@@ -8027,6 +8057,7 @@ end
 module ActiveRecord::VERSION; end
 ActiveRecord::VERSION::MAJOR = T.let(T.unsafe(nil), Integer)
 ActiveRecord::VERSION::MINOR = T.let(T.unsafe(nil), Integer)
+ActiveRecord::VERSION::PRE = T.let(T.unsafe(nil), String)
 ActiveRecord::VERSION::STRING = T.let(T.unsafe(nil), String)
 ActiveRecord::VERSION::TINY = T.let(T.unsafe(nil), Integer)
 
@@ -8039,7 +8070,6 @@ module ActiveRecord::Validations
 
   mixes_in_class_methods GeneratedClassMethods
   mixes_in_class_methods ::ActiveModel::Validations::ClassMethods
-  mixes_in_class_methods ::ActiveModel::Naming
   mixes_in_class_methods ::ActiveModel::Callbacks
   mixes_in_class_methods ::ActiveSupport::Callbacks::ClassMethods
   mixes_in_class_methods ::ActiveSupport::DescendantsTracker
