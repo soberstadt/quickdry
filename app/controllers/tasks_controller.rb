@@ -14,9 +14,16 @@ class TasksController < ApplicationController
     redirect_to tasks_path, turbolinks: false
   end
 
+  def update
+    task = Task.find(params[:id])
+    task.update(params.permit(:completed_at))
+
+    redirect_to tasks_path, turbolinks: false
+  end
+
   private
 
   def tasks
-    Task.all.as_json
+    Task.where(completed_at: nil).as_json
   end
 end

@@ -3,6 +3,7 @@ import Linkify from "react-linkify";
 import Layout from "./Layout";
 import { Head } from "@inertiajs/inertia-react";
 import NewTask from "../Components/NewTask";
+import { Inertia } from "@inertiajs/inertia";
 
 type TaskProp = {
   id: number;
@@ -24,9 +25,21 @@ export default function Tasks({ tasks }: TasksPageProps) {
       key={task.id}
       className="p-2 w-96 rounded-lg
       bg-gray-400 bg-opacity-20
-      dark:bg-gray-800 dark:bg-opacity-20"
+      dark:bg-gray-800 dark:bg-opacity-20
+      flex"
     >
-      <Linkify componentDecorator={decorateLink}>{task.description}</Linkify>
+      <input
+        type={"checkbox"}
+        onChange={() =>
+          Inertia.put(`/tasks/${task.id}`, {
+            completed_at: new Date().toISOString(),
+          })
+        }
+        className="mr-2 mt-1"
+      ></input>
+      <div className="">
+        <Linkify componentDecorator={decorateLink}>{task.description}</Linkify>
+      </div>
     </div>
   ));
 
