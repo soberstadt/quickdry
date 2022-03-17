@@ -85,7 +85,7 @@ class NotesController < ApplicationController
   end
 
   def notes_json
-    set_notes.map { |note| note.as_json.slice('id', 'date_string') }
+    set_notes.map { |note| note.slice(:id, :date_string, :first_line) }
   end
 
   sig { returns(NoteControllerParams) }

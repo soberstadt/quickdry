@@ -52,6 +52,11 @@ class Note < ApplicationRecord
     "#{markdown_title}\n\n#{body&.strip}"
   end
 
+  sig { returns(T.nilable(String)) }
+  def first_line
+    body.to_s.split("\n", 2).first&.truncate(40)
+  end
+
   private
 
   def markdown_title

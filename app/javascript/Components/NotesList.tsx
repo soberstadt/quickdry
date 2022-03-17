@@ -29,14 +29,22 @@ export default function NotesList({ note, notes }: NotePageProps) {
     <Link
       key={iNote.id}
       href={notesLink(iNote)}
-      className="block p-2 rounded-lg
+      className="block p-2 rounded-lg w-44
       bg-gray-400 bg-opacity-20
       hover:bg-gray-600 hover:bg-opacity-70 hover:text-gray-50
       dark:bg-gray-800 dark:bg-opacity-20
       dark:hover:bg-gray-300 dark:hover:bg-opacity-90 dark:hover:text-gray-700"
     >
-      {note.id == iNote.id ? "> " : ""}
-      {iNote.date_string}
+      <div>
+        {note.id == iNote.id ? "> " : ""}
+        {iNote.date_string}
+      </div>
+      <div
+        className="text-gray-400 w-full
+                   whitespace-nowrap overflow-ellipsis overflow-hidden"
+      >
+        {iNote.first_line}
+      </div>
     </Link>
   ));
 

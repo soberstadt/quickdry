@@ -9,6 +9,7 @@ type NoteProp = {
   date: Date;
   date_string: string;
   body: string;
+  first_line?: string;
 };
 export declare interface NotePageProps {
   note: NoteProp;
