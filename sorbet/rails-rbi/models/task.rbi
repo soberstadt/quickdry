@@ -17,6 +17,15 @@ module Task::GeneratedAttributeMethods
   sig { returns(T::Boolean) }
   def completed?; end
 
+  sig { returns(T.nilable(ActiveSupport::TimeWithZone)) }
+  def completed_at; end
+
+  sig { params(value: T.nilable(T.any(Date, Time, ActiveSupport::TimeWithZone))).void }
+  def completed_at=(value); end
+
+  sig { returns(T::Boolean) }
+  def completed_at?; end
+
   sig { returns(ActiveSupport::TimeWithZone) }
   def created_at; end
 
