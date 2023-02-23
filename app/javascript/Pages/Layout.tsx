@@ -18,8 +18,8 @@ export default function Layout({ children }) {
   const [flashState, setFlashState] = useState(undefined);
   useEffect(() => setFlashState(flash.message), [flash]);
 
-  useHotkeys("cmd+k", () => Inertia.visit("/search"), {
-    enableOnTags: ["TEXTAREA"],
+  useHotkeys("meta+k", () => Inertia.visit("/search"), {
+    enableOnFormTags: ["TEXTAREA"],
   });
 
   return (

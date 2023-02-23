@@ -22,7 +22,7 @@ export default function Search({ results, query }: SearchPageProps) {
   const notesLink = (note) => `/notes/${note.id}`;
 
   useHotkeys("esc", () => Inertia.visit("/notes/today"), {
-    enableOnTags: ["INPUT"],
+    enableOnFormTags: ["INPUT"],
   });
 
   const resultsList = results.map((iNote) => (
