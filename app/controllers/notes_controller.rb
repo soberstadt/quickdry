@@ -63,12 +63,8 @@ class NotesController < ApplicationController
   end
 
   def render_note_page(options = {})
-    options = options.merge(default_note_page_render_options)
-    render options
-  end
-
-  def default_note_page_render_options
-    { inertia: 'Note', props: { note: @note.as_json, notes: notes_json } }
+    props = { note: @note.attributes.as_json, notes: notes_json }
+    render(inertia: 'Note', props:, **options)
   end
 
   # Use callbacks to share common setup or constraints between actions.
@@ -90,7 +86,7 @@ class NotesController < ApplicationController
 
   sig { returns(NoteControllerParams) }
   def controller_params
-    id = T.cast(params.require(:id), T.nilable(String))
+    id = T.cast(params[:id], T.nilable(String))
     note_body = T.cast(params.dig(:note, :body), T.nilable(String))
     note = NoteControllerParams::NoteParams.new(body: note_body) if note_body
     NoteControllerParams.new(id:, note:)

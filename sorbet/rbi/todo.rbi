@@ -6,8 +6,3 @@
 
 module ::Spring; end
 module ActionMailer::Base::Mail::Message; end
-module Haml::AttributeParser; end
-module Haml::Parser::SPECIAL_CHARACTERS; end
-module Haml::VERSION; end
-module RBS::Parser; end
-module RBS::Parser::KEYWORDS_RE; end

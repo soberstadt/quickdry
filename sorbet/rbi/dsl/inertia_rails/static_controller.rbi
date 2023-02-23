@@ -11,6 +11,7 @@ class InertiaRails::StaticController
   module HelperMethods
     include ::ActionText::ContentHelper
     include ::ActionText::TagHelper
+    include ::InertiaRails::Helper
     include ::ActionController::Base::HelperMethods
     include ::ApplicationHelper
     include ::NotesHelper
