@@ -26,7 +26,7 @@ gem 'turbolinks', '~> 5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
-gem 'sorbet-rails'
+gem 'sorbet-runtime'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -44,6 +44,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   # gem 'spring'
 
+  gem 'sorbet'
   gem 'tapioca', require: false
   gem 'dalli'
 end

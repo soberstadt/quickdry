@@ -90,7 +90,10 @@ class NotesController < ApplicationController
 
   sig { returns(NoteControllerParams) }
   def controller_params
-    TypedParams[NoteControllerParams].new.extract!(params)
+    id = T.cast(params.require(:id), T.nilable(String))
+    note_body = T.cast(params.dig(:note, :body), T.nilable(String))
+    note = NoteControllerParams::NoteParams.new(body: note_body) if note_body
+    NoteControllerParams.new(id:, note:)
   end
 
   sig { returns(Hash) }
