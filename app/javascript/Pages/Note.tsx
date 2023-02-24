@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "./Layout";
 import { Head, router } from "@inertiajs/react";
 import NotesList from "../Components/NotesList";
@@ -16,12 +16,15 @@ export declare interface NotePageProps {
 }
 
 export default function Note({ note, notes }: NotePageProps) {
+  const [newNote, setNewNote] = useState(true);
+
   const handleChange = (event) => {
     const data = { body: event.target.value };
     const options = { preserveState: true };
     if (note.id !== null) {
       router.put(`/notes/${note.id}`, data, options);
-    } else {
+    } else if(newNote) {
+      setNewNote(false);
       router.post(`/notes`, data, options);
     }
   };
