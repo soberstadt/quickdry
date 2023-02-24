@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
-import { Link } from "@inertiajs/inertia-react";
-import { Inertia } from "@inertiajs/inertia";
+import { Link, router } from "@inertiajs/react";
 import { NotePageProps } from "../Pages/Note";
 
 export default function NotesList({ note, notes }: NotePageProps) {
   const MINUTE_MS = 60000;
 
   const reloadNotes = () => {
-    Inertia.reload({ only: ["notes"] });
+    router.reload({ only: ["notes"] });
   };
 
   useEffect(() => {

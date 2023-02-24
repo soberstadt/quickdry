@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "./Layout";
-import { Head } from "@inertiajs/inertia-react";
-import { Inertia } from "@inertiajs/inertia";
+import { Head, router } from "@inertiajs/react";
 import NotesList from "../Components/NotesList";
 
 type NoteProp = {
@@ -21,9 +20,9 @@ export default function Note({ note, notes }: NotePageProps) {
     const data = { body: event.target.value };
     const options = { preserveState: true };
     if (note.id !== null) {
-      Inertia.put(`/notes/${note.id}`, data, options);
+      router.put(`/notes/${note.id}`, data, options);
     } else {
-      Inertia.post(`/notes`, data, options);
+      router.post(`/notes`, data, options);
     }
   };
 

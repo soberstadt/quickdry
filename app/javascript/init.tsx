@@ -1,6 +1,6 @@
 import React from "react";
-import { render } from "react-dom";
-import { createInertiaApp } from "@inertiajs/inertia-react";
+import { createRoot } from 'react-dom/client'
+import { createInertiaApp } from "@inertiajs/react";
 
 const pageMap = {
   Note: require("./Pages/Note"),
@@ -12,6 +12,6 @@ createInertiaApp({
   resolve: (name) => pageMap[name],
   id: "app",
   setup({ el, App, props }) {
-    render(<App {...props} />, el);
+    createRoot(el).render(<App {...props} />)
   },
 });

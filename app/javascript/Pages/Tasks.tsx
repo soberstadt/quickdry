@@ -1,9 +1,8 @@
 import React from "react";
 import Linkify from "react-linkify";
 import Layout from "./Layout";
-import { Head } from "@inertiajs/inertia-react";
+import { Head, router } from "@inertiajs/react";
 import NewTask from "../Components/NewTask";
-import { Inertia } from "@inertiajs/inertia";
 
 type TaskProp = {
   id: number;
@@ -31,7 +30,7 @@ export default function Tasks({ tasks }: TasksPageProps) {
       <input
         type={"checkbox"}
         onChange={() =>
-          Inertia.put(`/tasks/${task.id}`, {
+          router.put(`/tasks/${task.id}`, {
             completed_at: new Date().toISOString(),
           })
         }

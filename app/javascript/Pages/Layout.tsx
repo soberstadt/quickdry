@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link, usePage } from "@inertiajs/inertia-react";
-import { Inertia, Page, PageProps } from "@inertiajs/inertia";
+import { Link, router, usePage } from "@inertiajs/react";
+import { Page, PageProps } from "@inertiajs/core";
 import Alert from "../Components/Alert";
 import { useHotkeys } from "react-hotkeys-hook";
 
-interface propsInterface extends Page<PageProps> {
+interface propsInterface extends PageProps {
   props: {
     flash: {
       message: string;
@@ -18,7 +18,7 @@ export default function Layout({ children }) {
   const [flashState, setFlashState] = useState(undefined);
   useEffect(() => setFlashState(flash.message), [flash]);
 
-  useHotkeys("meta+k", () => Inertia.visit("/search"), {
+  useHotkeys("meta+k", () => router.visit("/search"), {
     enableOnFormTags: ["TEXTAREA"],
   });
 

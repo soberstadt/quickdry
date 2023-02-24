@@ -7,7 +7,7 @@ import React from "react";
  * @see https://github.com/inertiajs/inertia/issues/824
  * @see https://github.com/inertiajs/inertia/pull/855
  */
-declare module "@inertiajs/inertia-react" {
+declare module "@inertiajs/react" {
   interface HeadProps {
     title?: string;
   }

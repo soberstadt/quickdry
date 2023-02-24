@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Layout from "./Layout";
-import { Head, Link } from "@inertiajs/inertia-react";
-import { Inertia } from "@inertiajs/inertia";
+import { Head, Link, router } from "@inertiajs/react";
 import { useHotkeys } from "react-hotkeys-hook";
 
 type NoteProp = {
@@ -21,7 +20,7 @@ declare interface SearchPageProps {
 export default function Search({ results, query }: SearchPageProps) {
   const notesLink = (note) => `/notes/${note.id}`;
 
-  useHotkeys("esc", () => Inertia.visit("/notes/today"), {
+  useHotkeys("esc", () => router.visit("/notes/today"), {
     enableOnFormTags: ["INPUT"],
   });
 
@@ -48,7 +47,7 @@ export default function Search({ results, query }: SearchPageProps) {
   const handleChange = (event) => {
     let data = { query: event.target.value };
 
-    Inertia.get(`/search`, data, { preserveState: true });
+    router.get(`/search`, data, { preserveState: true });
   };
 
   return (
